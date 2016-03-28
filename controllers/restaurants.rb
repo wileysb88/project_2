@@ -3,8 +3,8 @@ class RestaurantsController < ApplicationController
 
   get '/' do
 
-    erb :homepage
-    redirect '/' if !session[:logged_in]
+    erb :restaurantlist
+    # redirect '/' if !session[:logged_in]
 
   end
 
@@ -20,7 +20,7 @@ class RestaurantsController < ApplicationController
   Restaurant.create name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
 
   puts params
-  redirect '/all'
+  redirect '/restaurants/all'
 
   end
 

@@ -1,5 +1,5 @@
 
-<form class="" action="index.html" method="post">
+<form class="" action="/restaurants/create" method="post">
 
   <label for="name">Restaurant Name:</label>
   <input type="text" name="name" value="">
@@ -35,13 +35,16 @@
 
 
   <label for="patio">Patio</label>
-  <input type="radio" id="yes_patio" name="patio" value="yes_patio"><label for="yes_patio">Yes</label>
-  <input type="radio" id="no_patio" name="patio" value="no_patio"><label for="no_patio">No</label>
+  <input type="radio" id="yes_patio" name="tags" value="patio"><label for="yes_patio">Yes</label>
+  <input type="radio" id="no_patio" name="tags" value="no_patio"><label for="no_patio">No</label>
 
   <label for="description">Description</label>
   <input type="text" name="description" value="">
 
-  <input type="button" name="name" value="">
+  <label for="description">Description</label>
+  <input type="text" name="description" value="">
+
+  <button class="btn btn-danger" type="submit" name="button">Submit Restaurant!</button>
 
 </form>
 
