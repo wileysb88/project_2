@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   get '/' do
 
-    erb :homepage
-    redirect '/' if !session[:logged_in]
+    erb :login
+    # redirect '/' if !session[:logged_in]
 
   end
 
