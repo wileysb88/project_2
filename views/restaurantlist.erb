@@ -1,3 +1,48 @@
+
+<form class="" action="index.html" method="post">
+
+  <label for="name">Restaurant Name:</label>
+  <input type="text" name="name" value="">
+
+  <label for="neighborhood">Neighborhood: </label>
+  <select class="form-control" name="neighborhood" placeholder="Select Neighborhood">
+        <option value="" disabled selected>---Select Neighborhood---</option>
+        <option value="west_loop">West Loop</option>
+        <option value="south_loop">South Loop</option>
+        <option value="river_north">River North</option>
+        <option value="gold_coast">Gold Coast</option>
+        <option value="lincoln_park">Lincoln Park</option>
+        <option value="wicker_park">Wicker Park</option>
+        <option value="old_town">Old Town</option>
+        <option value="lakeview">Lakeview</option>
+        <option value="wrigleyville">Wrigleyville</option>
+        <option value="roscoe_village">Roscoe Village</option>
+        <option value="lincoln_square">Lincoln Square</option>
+        <option value="logan_square">Logan Square</option>
+  </select>
+
+  <label for="neighborhood">Cuisine Type: </label>
+  <select class="form-control" name="cuisine" placeholder="Select Cuisine">
+        <option value="" disabled selected>---Select Cuisine---</option>
+        <option value="barbeque">Barbeque</option>
+        <option value="chinese">Chinese</option>
+        <option value="thai">Thai</option>
+        <option value="italian">Italian</option>
+        <option value="mexican">Mexican</option>
+        <option value="sushi">Sushi</option>
+        <option value="american">American</option>
+  </select>
+
+
+  <label for="patio">Patio</label>
+  <input type="radio" id="yes_patio" name="patio" value="yes_patio"><label for="yes_patio">Yes</label>
+  <input type="radio" id="no_patio" name="patio" value="no_patio"><label for="no_patio">No</label>
+
+
+  <input type="button" name="name" value="">
+
+</form>
+
 <% @restaurants.each do |rest| %>
 
   <p>Restaurant: <%= rest.name %> </p>
@@ -7,7 +52,7 @@
   <p>Neighborhood: <%= rest.neighborhood %> </p>
 
   <hr>
-  <% end %>
+<% end %>
 
 
   <!-- Integer :poster_id
