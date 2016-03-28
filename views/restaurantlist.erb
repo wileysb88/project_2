@@ -55,6 +55,14 @@
   <p>tags: <%= rest.tags %> </p>
   <p>Score: <%= rest.vote_amount %> </p>
   <p>Neighborhood: <%= rest.neighborhood %> </p>
+  <form class="" action="/restaurants/voteup" method="post">
+    <input type="hidden" name="id" value="<%= rest.id %>">
+    <button type="submit" name="button">Vote this restaurant up!</button>
+  </form>
+  <form class="" action="/restaurants/votedown" method="post">
+    <input type="hidden" name="id" value="<%= rest.id %>">
+    <button type="submit" name="button">Vote this restaurant down.</button>
+  </form>
 
   <hr>
 <% end %>

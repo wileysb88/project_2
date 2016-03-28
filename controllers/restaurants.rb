@@ -24,6 +24,30 @@ class RestaurantsController < ApplicationController
 
   end
 
+  post '/voteup' do
+
+  params[:id]
+  rest = Restaurant[id: params[:id]]
+  puts rest
+  rest.vote_amount += 1
+  rest.save
+  puts params
+  redirect '/restaurants/all'
+
+  end
+
+  post '/votedown' do
+
+  params[:id]
+  rest = Restaurant[id: params[:id]]
+  puts rest
+  rest.vote_amount -= 1
+  rest.save
+  puts params
+  redirect '/restaurants/all'
+
+  end
+
 end
 
 # create_table(:restaurants) do
