@@ -15,5 +15,27 @@ class RestaurantsController < ApplicationController
 
   end
 
+  post '/create' do
+
+  Restaurant.create name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
+
+  puts params
+  redirect '/all'
+
+  end
 
 end
+
+# create_table(:restaurants) do
+#   primary_key :id
+#   Integer :poster_id
+#   String :name
+#   Text :description
+#   String :tags
+#   Integer :vote_amount
+#   String :neighborhood
+# end
+
+# def longest(array)
+#   array.max_by(&:length)
+# end
