@@ -8,5 +8,12 @@ class RestaurantsController < ApplicationController
 
   end
 
+  get '/all' do
+
+    @restaurants = Restaurant.all
+    erb :restaurantlist
+
+  end
+
 
 end
