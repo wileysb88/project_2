@@ -29,13 +29,6 @@ class UsersController < ApplicationController
   end
 
 
-  get '/all/logged' do
-
-    @userslogged = User.all
-    erb :loginlist
-
-  end
-
   post '/logout' do
     params[:id]
     user = User[id: params[:id]]
@@ -43,7 +36,7 @@ class UsersController < ApplicationController
     user.logged_in = false
     user.save
     puts params
-    redirect '/users/all/logged'
+    redirect '/users/all'
   end
 
   # ---- Test page should display the current user
