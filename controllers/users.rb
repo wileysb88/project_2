@@ -12,6 +12,13 @@ class UsersController < ApplicationController
 
 
 
+
+
+
+
+
+
+
  #-----------  VVVVVVVVVV        Test Paths
 
   get '/all' do
@@ -49,7 +56,7 @@ class UsersController < ApplicationController
   post '/create' do
     password = BCrypt::Password.create(params[:password])
 
-    User.create username: params[:username], password: password, logged_in: true, hp: 100
+    User.create username: params[:username], password: password, logged_in: true
     user = User[username: params[:username]]
 
     session[:logged_in] = true
