@@ -35,3 +35,7 @@ end
 #   Integer :vote_amount
 #   String :neighborhood
 # end
+
+# def longest(array)
+#   array.max_by(&:length)
+# end
