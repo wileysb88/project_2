@@ -1,0 +1,23 @@
+<% @userslogged.each do |user| %>
+<% if user[:logged_in] == true %>
+
+  <p>User: <%= user.username %> </p>
+  <p>Hp: <%= user.password %> </p>
+  <hr>
+  <% end %>
+
+
+  <hr><hr><hr>
+
+  <% if user[:logged_in] == true %>
+
+  <p>User: <%= user.username %> </p>
+  <p>Hp: <%= user.password %> </p>
+  <form class="" action="/users/logout" method="post">
+    <input type="hidden" name="id" value="<%= user.id %>">
+    <button type="submit" name="button">Log this user out</button>
+  </form>
+  <hr>
+  <% end %>
+
+<% end %>
