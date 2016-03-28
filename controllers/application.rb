@@ -6,6 +6,7 @@ class ApplicationController < Sinatra::Base
 
   enable :sessions
 
+
   before do
     @title ||= 'Homepage'
     @current_user = session[:username]
