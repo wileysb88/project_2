@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
 
   get '/' do
 
-    erb :restaurantlist
+    erb :restaurants
     # redirect '/' if !session[:logged_in]
 
   end
