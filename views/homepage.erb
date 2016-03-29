@@ -12,11 +12,43 @@
   <br />
     <div class="">
         <div class="col-md-6">
+<<<<<<< HEAD
             <% @sorted_restaurants.each do |rest| %>
             <p>Restaurant: <%= rest.name %> </p>
             <p>Score: <%= rest.vote_amount %> </p>
             <hr>
           <% end %>
+=======
+          <!-- going to include top ten from :vote_amount in BARS class -->
+          <!-- Bars.sort_by { |bar| bar[:vote_amount]}.reverse!  -->
+          <!-- need to add a loop to only include the top 10 -->
+          <!-- <% @restaurants.sort_by { |rest| rest[:vote_amount]}.reverse! %>
+          i = 0
+          num = 11
+          while i<num do
+            puts "#{i + 1}. #{rest.name}. #{rest.neighborhood}. #{rest.tags}. #{rest.vote_amount}"
+            puts "#{rest.description}"
+            i += 1
+          end -->
+
+            <p>Restaurant: <%= rest.name %> </p>
+            <p>Description: <%= rest.description %> </p>
+            <p>tags: <%= rest.tags %> </p>
+            <p>Score: <%= rest.vote_amount %> </p>
+            <p>Neighborhood: <%= rest.neighborhood %> </p>
+            <form class="" action="/restaurants/voteup" method="post">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <button type="submit" name="button">Vote this restaurant up!</button>
+            </form>
+            <form class="" action="/restaurants/votedown" method="post">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <button type="submit" name="button">Vote this restaurant down.</button>
+            </form>
+
+            <hr>
+          <% end %>
+
+>>>>>>> b43ad05382d1c03eb0757300a59e70217dcf5cf8
           1.<hr>
           2.<hr>
           3.<hr>

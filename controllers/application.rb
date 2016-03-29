@@ -44,6 +44,7 @@ class ApplicationController < Sinatra::Base
     @sorted_restaurants = bouttosort.sort_by { |rest| rest[:vote_amount]}.reverse!
     puts @sorted_restaurants
 
+
     # erb :homepage, locals: { title: 'Homepage' }
     erb :homepage
   end
