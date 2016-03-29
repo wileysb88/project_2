@@ -55,3 +55,7 @@ label{
 .karma-low {
   color: darkred;
 }
+
+.notFound {
+  position: relative;
+}
