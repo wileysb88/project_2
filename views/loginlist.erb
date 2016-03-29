@@ -1,4 +1,4 @@
-<% @users.each do |user| %>
+<% @sorted_users2.each do |user| %>
   <% if user[:logged_in] == true %>
 
   <p>User: <%= user.username %> </p>
@@ -15,7 +15,7 @@
 <hr><hr><hr>
 
 
-<% @users.each do |user| %>
+<% @sorted_users2.each do |user| %>
 
   <p>User: <%= user.username %> </p>
   <p>Password: <%= user.password %> </p>

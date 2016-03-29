@@ -41,8 +41,14 @@ class ApplicationController < Sinatra::Base
   get '/' do
     # @user = User.find_by(id session[:user_id])
     bouttosort = Restaurant.all
+    @rest_rank = 1
+    @user_rank = 1
     @sorted_restaurants = bouttosort.sort_by { |rest| rest[:vote_amount]}.reverse!
     puts @sorted_restaurants
+
+    user_to_sort = User.all
+    @sorted_users = user_to_sort.sort_by { |user| user[:karma]}.reverse!
+
 
     # erb :homepage, locals: { title: 'Homepage' }
     erb :homepage
