@@ -13,22 +13,24 @@
     <div class="">
         <div class="col-md-6">
             <% @sorted_restaurants.each do |rest| %>
-            <p>Restaurant: <%= rest.name %> </p>
+            <p><%= @rest_rank %>.  <%= rest.name %> </p>
             <p>Score: <%= rest.vote_amount %> </p>
             <hr>
+            <% @rest_rank += 1 %>
           <% end %>
-          1.<hr>
+          <!-- 1.<hr>
           2.<hr>
           3.<hr>
           4.<hr>
-          5.<hr>
+          5.<hr> -->
         </div>
         <div class="col-md-6">
-          6.<hr>
-          7.<hr>
-          8.<hr>
-          9.<hr>
-          10.<hr>
+          <% @sorted_users.each do |user| %>
+          <p><%= @user_rank %>.  <%= user.username %> </p>
+          <p>Karma: <%= user.karma %> </p>
+          <hr>
+          <% @user_rank += 1 %>
+          <% end %>
         </div>
     </div>
 </div>

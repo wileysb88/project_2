@@ -25,7 +25,13 @@
             <% if session[:logged_in] == true %>
               <div class="<%= @karmaclass %>">Hello, <%= @current_user %> </div><a href='users/logout'>Logout</a>
               <% else %>
-              <div><a href="/users">LOGIN/REGISTER</a></div>
+              <div>
+              <form class="form-inline" action="/users/login" method="post">
+                <input type="text" name="username" value="" placeholder="Username">
+                <input type="password" name="password" value="" placeholder="password">
+                <button type="submit" class="btn btn-primary" name="button">LOG IN</button>
+              </form></div>
+              <!-- <a href="/users">LOGIN/REGISTER</a> -->
             <% end %>
           </div>
       </div>
