@@ -17,6 +17,8 @@ class RestaurantsController < ApplicationController
 
   post '/create' do
 
+  # poster_id: session[:current_user_id],
+
   Restaurant.create name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
 
   puts params
@@ -24,24 +26,38 @@ class RestaurantsController < ApplicationController
 
   end
 
+  # Linked to 'upvote' type buttons, will raise a restaurant's votes by 1 and the restaurant poster's karma by 10
   post '/voteup' do
 
   params[:id]
   rest = Restaurant[id: params[:id]]
+  # votee = User[id: rest[:poster_id]]
   puts rest
+  # puts votee
   rest.vote_amount += 1
+  #   if votee === true
+  #     votee.karma += 10
+  #     votee.save
+  #   end
   rest.save
   puts params
   redirect '/restaurants/all'
 
   end
 
+  # As above, but downways instead of upways
   post '/votedown' do
 
   params[:id]
   rest = Restaurant[id: params[:id]]
+  # votee = User[id: rest[:poster_id]]
   puts rest
+  # puts votee
   rest.vote_amount -= 1
+  #   if votee === true
+  #     votee.karma -= 10
+  #     votee.save
+  #   end
   rest.save
   puts params
   redirect '/restaurants/all'
