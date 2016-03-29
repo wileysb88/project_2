@@ -6,22 +6,25 @@ class ApplicationController < Sinatra::Base
 
   enable :sessions
 
+
+
   before do
     @title ||= 'Homepage'
+    @karmaclass = ""
     @current_user = session[:username]
     if session[:logged_in] == true
-    user = User[id: session[:current_user_id]]
-    puts user
+      user = User[id: session[:current_user_id]]
       if user.karma >= 50
-        @karmaclass = "karma-high"
         p "HIGH KaRmA!!!!!!!"
+        @karmaclass = "karma-high"
       elsif user.karma <= 0
-        @karmaclass = "karma-low"
         p "LOW KARMAAA!"
+        @karmaclass = "karma-low"
       else
-        @karmaclass = "karma-med"
         p "MED KARMAAAA!"
+        @karmaclass = "karma-med"
       end
+      p @karmaclass
     end
 
 
