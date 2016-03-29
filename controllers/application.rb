@@ -9,6 +9,24 @@ class ApplicationController < Sinatra::Base
   before do
     @title ||= 'Homepage'
     @current_user = session[:username]
+    if session[:logged_in] == true
+    user = User[id: session[:current_user_id]]
+    puts user
+      if user.karma >= 50
+        @karmaclass = "karma-high"
+        p "HIGH KaRmA!!!!!!!"
+      elsif user.karma <= 0
+        @karmaclass = "karma-low"
+        p "LOW KARMAAA!"
+      else
+        @karmaclass = "karma-med"
+        p "MED KARMAAAA!"
+      end
+    end
+
+
+    # if user = User[id: session[:current_user_id]]
+
   end
 
   # Path for testing: Should display current user's username

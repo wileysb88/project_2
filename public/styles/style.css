@@ -28,3 +28,11 @@ nav {
 label{
   margin-right: 5px;
 }
+
+.karma-high {
+  background: blue;
+}
+
+.karma-med {
+  background: yellow;
+}

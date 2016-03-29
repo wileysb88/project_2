@@ -41,11 +41,16 @@
           <ul class="nav navbar-nav">
             <li><a href="/restaurants">RESTAURANT</a></li>
             <li><a href="/users">USER</a></li>
-            <li><a href="#">GROUPS</a></li>
+            <li><a href="/users/all">ALL USERS</a></li>
+            <li><a href="/restaurants/all">ALL RESTAURANTS</a></li>
           </ul>
         </div>
       <head>
-        <%= @current_user %>
+        <% if session[:logged_in] == true %>
+          <div class=" <% @karmaclass %> "> <%= @current_user %> </div>
+          <% else %>
+          <li>You are not logged in </li>
+        <% end %>
       </head>
 
 
