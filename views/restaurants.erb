@@ -1,12 +1,15 @@
-
-<form class="" action="/restaurants/create" method="post">
-
+<div class="">
+  <h3>Tell us about a restaurant. Enter in the info below and post it for the whole Chicagoland area to see!</h3>
+</div>
+<form class="form-horizontal" action="/restaurants/create" method="post">
+  <br />
   <label for="name">Restaurant Name:</label>
-  <input type="text" name="name" value="">
-
+  <input type="text" class="form-control" name="name" value="" placeholder="Enter Name">
+  <br />
+  <br />
   <label for="neighborhood">Neighborhood: </label>
   <select class="form-control" name="neighborhood" placeholder="Select Neighborhood">
-        <option value="" disabled selected>---Select Neighborhood---</option>
+        <option value="" disabled selected>Select Neighborhood</option>
         <option value="west_loop">West Loop</option>
         <option value="south_loop">South Loop</option>
         <option value="river_north">River North</option>
@@ -20,10 +23,10 @@
         <option value="lincoln_square">Lincoln Square</option>
         <option value="logan_square">Logan Square</option>
   </select>
-
+  <br />
   <label for="neighborhood">Cuisine Type: </label>
   <select class="form-control" name="cuisine" placeholder="Select Cuisine">
-        <option value="" disabled selected>---Select Cuisine---</option>
+        <option value="" disabled selected>Select Cuisine</option>
         <option value="barbeque">Barbeque</option>
         <option value="chinese">Chinese</option>
         <option value="thai">Thai</option>
@@ -33,15 +36,15 @@
         <option value="american">American</option>
   </select>
 
-
+  <br />
   <label for="patio">Patio</label>
   <input type="radio" id="yes_patio" name="tags" value="patio"><label for="yes_patio">Yes</label>
   <input type="radio" id="no_patio" name="tags" value="no_patio"><label for="no_patio">No</label>
-
-
-  <label for="description">Description</label>
-  <input type="text" name="description" value="">
-
-  <button class="btn btn-danger" type="submit" name="button">Submit Restaurant!</button>
-
+  <br />
+  <br />
+  <label for="description">Description: </label>
+  <input class="form-control description" type="textbox" name="description" value="" placeholder="Tell Us About It">
+  <br />
+  <br />
+  <button class="btn btn-primary" type="submit" name="button">Submit Restaurant!</button>
 </form>

@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
     # @user = User.find_by(id session[:user_id])
     bouttosort = Restaurant.all
     @sorted_restaurants = bouttosort.sort_by { |rest| rest[:vote_amount]}.reverse!
-
+    puts @sorted_restaurants
 
     # erb :homepage, locals: { title: 'Homepage' }
     erb :homepage

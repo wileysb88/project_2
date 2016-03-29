@@ -12,15 +12,10 @@
   <br />
     <div class="">
         <div class="col-md-6">
-
-          <% @sorted_restaurants.each do |rest| %>
-
+            <% @sorted_restaurants.each do |rest| %>
             <p>Restaurant: <%= rest.name %> </p>
-            <p>Description: <%= rest.description %> </p>
-            <p>tags: <%= rest.tags %> </p>
             <p>Score: <%= rest.vote_amount %> </p>
-            <p>Neighborhood: <%= rest.neighborhood %> </p>
-            <p>Author <%= rest.poster_id %> </p>
+            <hr>
           <% end %>
           1.<hr>
           2.<hr>
