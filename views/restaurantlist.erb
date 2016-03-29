@@ -38,8 +38,6 @@
   <input type="radio" id="yes_patio" name="tags" value="patio"><label for="yes_patio">Yes</label>
   <input type="radio" id="no_patio" name="tags" value="no_patio"><label for="no_patio">No</label>
 
-  <label for="description">Description</label>
-  <input type="text" name="description" value="">
 
   <label for="description">Description</label>
   <input type="text" name="description" value="">
@@ -48,24 +46,24 @@
 
 </form>
 
-<% @restaurants.each do |rest| %>
+  <% @restaurants.each do |rest| %>
 
-  <p>Restaurant: <%= rest.name %> </p>
-  <p>Description: <%= rest.description %> </p>
-  <p>tags: <%= rest.tags %> </p>
-  <p>Score: <%= rest.vote_amount %> </p>
-  <p>Neighborhood: <%= rest.neighborhood %> </p>
-  <form class="" action="/restaurants/voteup" method="post">
-    <input type="hidden" name="id" value="<%= rest.id %>">
-    <button type="submit" name="button">Vote this restaurant up!</button>
-  </form>
-  <form class="" action="/restaurants/votedown" method="post">
-    <input type="hidden" name="id" value="<%= rest.id %>">
-    <button type="submit" name="button">Vote this restaurant down.</button>
-  </form>
+    <p>Restaurant: <%= rest.name %> </p>
+    <p>Description: <%= rest.description %> </p>
+    <p>tags: <%= rest.tags %> </p>
+    <p>Score: <%= rest.vote_amount %> </p>
+    <p>Neighborhood: <%= rest.neighborhood %> </p>
+    <form class="" action="/restaurants/voteup" method="post">
+      <input type="hidden" name="id" value="<%= rest.id %>">
+      <button type="submit" name="button">Vote this restaurant up!</button>
+    </form>
+    <form class="" action="/restaurants/votedown" method="post">
+      <input type="hidden" name="id" value="<%= rest.id %>">
+      <button type="submit" name="button">Vote this restaurant down.</button>
+    </form>
 
-  <hr>
-<% end %>
+    <hr>
+  <% end %>
 
 
   <!-- Integer :poster_id
