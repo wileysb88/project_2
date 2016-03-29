@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   end
 
+  # @accountmessage = "You are logged in as #{session[:username]} Welcome back! Your id is #{session[:current_user_id]}"
 
 
 
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   post '/create' do
     password = BCrypt::Password.create(params[:password])
 
-    User.create username: params[:username], password: password, logged_in: true, karma: 0
+    User.create username: params[:username], password: password, logged_in: true
     user = User[username: params[:username]]
 
     session[:logged_in] = true
@@ -58,7 +59,7 @@ class UsersController < ApplicationController
 
     logged_in = user[:logged_in]
 
-    "hello your password hash is #{password} Welcome back! are you logged in? #{logged_in}"
+    "hello your name is #{sessions[:username]} Welcome back! are you logged in? #{logged_in}"
 
   end
 
@@ -77,7 +78,8 @@ class UsersController < ApplicationController
       user.logged_in = true
       user.save
       # "Welcome back #{params[:username]}! your session info is #{session[:username]} #{session[:logged_in]}"
-      redirect '/users/all/logged'
+      "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]}"
+
 
     else
       "You failed your password check, roll again"

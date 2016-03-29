@@ -6,7 +6,6 @@ class ApplicationController < Sinatra::Base
 
   enable :sessions
 
-
   before do
     @title ||= 'Homepage'
     @current_user = session[:username]
@@ -20,6 +19,8 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     # @user = User.find_by(id session[:user_id])
+    bouttosort = Restaurant.all
+    @sorted_restaurants = bouttosort.sort_by { |rest| rest[:vote_amount]}.reverse!
 
 
     # erb :homepage, locals: { title: 'Homepage' }

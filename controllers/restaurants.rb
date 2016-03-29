@@ -17,8 +17,9 @@ class RestaurantsController < ApplicationController
 
   post '/create' do
 
+  poster = session[:current_user_id]
 
-  Restaurant.create poster_id: 1 || session[:current_user_id], name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
+  Restaurant.create poster_id: poster || 1, name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
 
   puts params
   redirect '/restaurants/all'
