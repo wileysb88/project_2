@@ -48,7 +48,7 @@
         </div>
       <head>
         <% if session[:logged_in] == true %>
-          <div class="<%= @karmaclass %>"> <%= @current_user %> </div>
+          <div class="<%= @karmaclass %>"> <%= @current_user %> </div> <a href='users/logout'>Logout</a>
           <% else %>
           <li>You are not logged in </li>
         <% end %>

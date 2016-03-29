@@ -48,17 +48,25 @@ class UsersController < ApplicationController
 
 
   post '/create' do
+
+    @all_users = User.all
+    @all_users.each do |user|
+      if (user.username == params[:username])
+        status 403
+      end
+    end
+
     password = BCrypt::Password.create(params[:password])
+    # if params[:username] != User.all.each[:username]
+      User.create username: params[:username], password: password, logged_in: true, karma: 0
+      user = User[username: params[:username]]
 
-    User.create username: params[:username], password: password, logged_in: true, karma: 0
-    user = User[username: params[:username]]
+      session[:logged_in] = true
+      session[:username] = params[:username]
+      session[:current_user_id] = user[:id]
 
-    session[:logged_in] = true
-    session[:username] = params[:username]
-    session[:current_user_id] = user[:id]
-
-    logged_in = user[:logged_in]
-    redirect '/'
+      logged_in = user[:logged_in]
+      redirect '/'
     # "hello your name is #{sessions[:username]} Welcome back! are you logged in? #{logged_in}"
 
   end
@@ -78,7 +86,8 @@ class UsersController < ApplicationController
       user.logged_in = true
       user.save
       # "Welcome back #{params[:username]}! your session info is #{session[:username]} #{session[:logged_in]}"
-      "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]} and your karma is #{user[:karma]}"
+      # "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]} and your karma is #{user[:karma]}"
+      redirect '/'
 
 
     else
@@ -94,6 +103,7 @@ class UsersController < ApplicationController
     @logoutuser.logged_in = false
     @logoutuser.save
     session[:logged_in] = false
+    redirect '/'
 
   end
 
