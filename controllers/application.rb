@@ -13,8 +13,8 @@ class ApplicationController < Sinatra::Base
 
   # Path for testing: Should display current user's username
   get '/whois' do
-      user = User[id: session[:user_id]]
-      "Hello Welcome back #{user[:username]}"
+      user = User[id: session[:current_user_id]]
+      "Hello Welcome back #{user[:username]} your karma is #{user[:karma]}"
     end
 
   get '/' do

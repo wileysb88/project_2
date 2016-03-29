@@ -78,7 +78,7 @@ class UsersController < ApplicationController
       user.logged_in = true
       user.save
       # "Welcome back #{params[:username]}! your session info is #{session[:username]} #{session[:logged_in]}"
-      "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]}"
+      "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]} and your karma is #{user[:karma]}"
 
 
     else
