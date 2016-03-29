@@ -6,17 +6,22 @@
 </div>
 
 <div class="col-md-12 top_ten">
-  <div class="col-md-12 topper">
+  <div class="col-md-6 topper" style="float: left">
     TOP 10 RESTAURANTS
+  </div>
+  <div class="col-md-6 topper" style="float: right; background: darkred">
+    TOP 10 USERS
   </div>
   <br />
     <div class="">
         <div class="col-md-6">
-            <% @sorted_restaurants.each do |rest| %>
-            <p><%= @rest_rank %>.  <%= rest.name %> </p>
-            <p>Score: <%= rest.vote_amount %> </p>
-            <hr>
-            <% @rest_rank += 1 %>
+          <% @sorted_restaurants.each do |rest| %>
+              <div class="rest-list">
+                <p><%= @rest_rank %>.  <%= rest.name %> </p>
+                <p>Score: <%= rest.vote_amount %> </p>
+                <hr>
+              </div>
+              <% @rest_rank += 1 %>
           <% end %>
           <!-- 1.<hr>
           2.<hr>
@@ -26,10 +31,12 @@
         </div>
         <div class="col-md-6">
           <% @sorted_users.each do |user| %>
-          <p><%= @user_rank %>.  <%= user.username %> </p>
-          <p>Karma: <%= user.karma %> </p>
-          <hr>
-          <% @user_rank += 1 %>
+              <div class="rest-list">
+                <p><%= @user_rank %>.  <%= user.username %> </p>
+                <p>Karma: <%= user.karma %> </p>
+                <hr>
+              </div>
+            <% @user_rank += 1 %>
           <% end %>
         </div>
     </div>
