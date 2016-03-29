@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
       if user.karma >= 50
         p "HIGH KaRmA!!!!!!!"
         @karmaclass = "karma-high"
-      elsif user.karma <= 0
+      elsif user.karma < 0
         p "LOW KARMAAA!"
         @karmaclass = "karma-low"
       else

@@ -30,9 +30,13 @@ label{
 }
 
 .karma-high {
-  background: blue;
+  color: blue;
 }
 
 .karma-med {
-  background: yellow;
+  color: orange;
+}
+
+.karma-low {
+  color: darkred;
 }
