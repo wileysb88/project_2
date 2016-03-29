@@ -23,8 +23,9 @@ class UsersController < ApplicationController
  #-----------  VVVVVVVVVV        Test Paths
 
   get '/all' do
-
-    @users = User.all
+    bouttosort = User.all
+    @sorted_users = bouttosort.sort_by { |user| user[:karma]}.reverse!
+    puts @sorted_users
     erb :loginlist
 
   end
