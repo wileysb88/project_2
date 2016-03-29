@@ -24,8 +24,8 @@ class UsersController < ApplicationController
 
   get '/all' do
     bouttosort = User.all
-    @sorted_users = bouttosort.sort_by { |user| user[:karma]}.reverse!
-    puts @sorted_users
+    @sorted_users2 = bouttosort.sort_by { |user| user[:karma]}.reverse!
+    puts @sorted_users2
     erb :loginlist
 
   end
