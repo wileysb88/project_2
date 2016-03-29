@@ -3,14 +3,29 @@ body {
   font-family: 'Special Elite', serif;
 }
 
+header{
+  background: url('/styles/Screen Shot 2016-03-29 at 1.26.17 PM.png') fixed center center;
+}
+
 
 h1 {
   font-size: 56px;
   margin-bottom: 0px;
+
 }
 
 nav {
   text-align: right;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+li {
+  text-color: white;
+}
+
+.username_or_login{
+  text-align: right;
+  text-size: 12px;
 }
 
 .welcome_blurb{
