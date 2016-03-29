@@ -48,5 +48,9 @@ class ApplicationController < Sinatra::Base
     erb :homepage
   end
 
+  not_found do
+    erb :notfound
+  end
+
 
 end
