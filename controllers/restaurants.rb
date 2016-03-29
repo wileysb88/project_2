@@ -11,6 +11,8 @@ class RestaurantsController < ApplicationController
   get '/all' do
 
     @restaurants = Restaurant.all
+    
+
     erb :restaurantlist
 
   end

@@ -20,8 +20,6 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     # @user = User.find_by(id session[:user_id])
-
-
     # erb :homepage, locals: { title: 'Homepage' }
     erb :homepage
   end
