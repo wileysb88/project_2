@@ -1,19 +1,35 @@
 
 
-<form class="" action="/users/create" method="post">
-  <input type="text" name="username" value="" placeholder="Choosername">
-  <br>
-  <input type="password" name="password" value="" placeholder="password">
-  <br>
-  <button type="submit" name="button">Signup!</button>
+<form class="form-horizontal" action="/users/login" method="post">
+  <div class="col-md-6">
+
+    <h3>LOGIN</h3>
+    <label for="username">Username: </label>
+    <input type="text" name="username" value="" placeholder="Choosername">
+    <br />
+    <label for="password">Password: </label>
+    <input type="password" name="password" value="" placeholder="password">
+    <br />
+    <button type="submit" class="btn btn-primary" name="button">SIGN IN</button>
+  </div>
 
 </form>
-<hr>
-<form class="" action="/users/login" method="post">
-  <input type="text" name="username" value="" placeholder="Choosername">
-  <br>
-  <input type="password" name="password" value="" placeholder="password">
-  <br>
-  <button type="submit" name="button">Sign in</button>
-
+<form class="form-horizontal" action="/users/create" method="post">
+  <div class="col-md-6">
+    <h3>REGISTER</h3>
+    <label for="name" >Name: </label>
+    <input type="text" name="name" value="" placeholder="Enter your name">
+    <br />
+    <label for="username" >Email: </label>
+    <input type="text" name="email" value="" placeholder="Enter your email">
+    <br />
+    <label for="username" >Username: </label>
+    <input type="text" name="username" value="" placeholder="Choose a username">
+    <br />
+    <label for="Name">Password: </label>
+    <input type="password" name="password" value="" placeholder="Choose a password">
+    <br>
+    <!-- CAN ADD RE-ENTER PASSWORD LATER -->
+    <button type="submit" class="btn btn-primary" name="button">Sign in</button>
+  </div>
 </form>

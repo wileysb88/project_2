@@ -1,0 +1,30 @@
+body {
+  margin: 10px;
+  font-family: 'Special Elite', serif;
+}
+
+
+h1 {
+  font-size: 56px;
+  margin-bottom: 0px;
+}
+
+nav {
+  text-align: right;
+}
+
+.welcome_blurb{
+  text-align: center;
+}
+
+.topper{
+  text-align: center;
+  background: rgba(40, 96, 144, 0.5);
+  height: 50px;
+  margin-bottom: 5px;
+  font-size: 36px;
+}
+
+label{
+  margin-right: 5px;
+}
