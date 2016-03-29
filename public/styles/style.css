@@ -32,6 +32,8 @@ li {
   text-align: center;
 }
 
+
+
 .topper{
   text-align: center;
   background: rgba(40, 96, 144, 0.5);
@@ -42,6 +44,7 @@ li {
 
 label{
   margin-right: 5px;
+  margin-left: 7px;
 }
 
 .karma-high {
