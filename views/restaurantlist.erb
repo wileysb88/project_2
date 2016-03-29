@@ -7,6 +7,8 @@
     <p>tags: <%= rest.tags %> </p>
     <p>Score: <%= rest.vote_amount %> </p>
     <p>Neighborhood: <%= rest.neighborhood %> </p>
+    <p>Author <%= rest.poster_id %> </p>
+
     <form class="" action="/restaurants/voteup" method="post">
       <input type="hidden" name="id" value="<%= rest.id %>">
       <button type="submit" name="button">Vote this restaurant up!</button>

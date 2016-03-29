@@ -17,9 +17,8 @@ class RestaurantsController < ApplicationController
 
   post '/create' do
 
-  # poster_id: session[:current_user_id],
 
-  Restaurant.create name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
+  Restaurant.create poster_id: 1 || session[:current_user_id], name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
 
   puts params
   redirect '/restaurants/all'
@@ -31,14 +30,14 @@ class RestaurantsController < ApplicationController
 
   params[:id]
   rest = Restaurant[id: params[:id]]
-  # votee = User[id: rest[:poster_id]]
+  votee = User[id: rest[:poster_id]]
   puts rest
-  # puts votee
+  puts votee
   rest.vote_amount += 1
-  #   if votee === true
-  #     votee.karma += 10
-  #     votee.save
-  #   end
+    # if votee === true
+      votee.karma += 10
+      votee.save
+    # end
   rest.save
   puts params
   redirect '/restaurants/all'
@@ -50,14 +49,14 @@ class RestaurantsController < ApplicationController
 
   params[:id]
   rest = Restaurant[id: params[:id]]
-  # votee = User[id: rest[:poster_id]]
+  votee = User[id: rest[:poster_id]]
   puts rest
-  # puts votee
+  puts votee
   rest.vote_amount -= 1
-  #   if votee === true
-  #     votee.karma -= 10
-  #     votee.save
-  #   end
+    # if votee === true
+      votee.karma -= 10
+      votee.save
+    # end
   rest.save
   puts params
   redirect '/restaurants/all'
