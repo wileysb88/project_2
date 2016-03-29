@@ -1,4 +1,4 @@
-#$ sequel -m migrations/ sqlite://development.sqlite
+# $ sequel -m migrations/ sqlite://development.sqlite
 
 Sequel.migration do
   change do
