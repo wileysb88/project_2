@@ -98,15 +98,15 @@ label {
 }
 
 .karma-high {
-  color: rgb(30, 58, 84);
+  color: rgb(40, 96, 144);
 }
 
 .karma-med {
-  color: rgb(28, 31, 29);
+  color: white;
 }
 
 .karma-low {
-  color: rgb(97, 23, 23);
+  color: rgb(201, 48, 44);
 }
 
 .notFound {
