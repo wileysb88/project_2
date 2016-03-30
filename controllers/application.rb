@@ -1,10 +1,11 @@
 class ApplicationController < Sinatra::Base
-
   # set folder for templates to ../views, but make the path absolute
   set :public_folder, File.expand_path('../../public', __FILE__)
   set :views, File.expand_path('../../views', __FILE__)
 
   enable :sessions
+  @account_message = ""
+
 
 
 
@@ -26,6 +27,9 @@ class ApplicationController < Sinatra::Base
       end
       p @karmaclass
     end
+
+
+    # @account_message = "You are logged in as #{session[:username]}"
 
     if !session[:logged_in]
       @welcome_message = "<div class='row welcome_blurb fixed-footer'>

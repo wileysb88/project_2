@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   get '/' do
 
     erb :login
@@ -8,7 +7,6 @@ class UsersController < ApplicationController
 
   end
 
-  # @accountmessage = "You are logged in as #{session[:username]} Welcome back! Your id is #{session[:current_user_id]}"
 
 
 
@@ -35,13 +33,6 @@ class UsersController < ApplicationController
   end
 
   post '/update' do
-    # @all_users2 = User.all # this kinda sucks IRL but SOOOOONNN
-    # @all_users2.each do |user|
-    #   if (user.id == session[:current_user_id])
-        # user.password = params[:password_new]
-        # user.save
-    #   end
-    # end
     user = User[id: session[:current_user_id]]
     password = BCrypt::Password.create(params[:password_new])
     puts user[:id]
@@ -51,6 +42,7 @@ class UsersController < ApplicationController
     puts user.password
     p "IT UPDATED THE PASSWORD!"
     redirect '/'
+    @account_message = "Your password has been updated."
   end
 
 
@@ -90,6 +82,7 @@ class UsersController < ApplicationController
       session[:current_user_id] = user[:id]
 
       logged_in = user[:logged_in]
+      @account_message = "Welcome to our site!"
       redirect '/'
     # "hello your name is #{sessions[:username]} Welcome back! are you logged in? #{logged_in}"
 
@@ -111,11 +104,15 @@ class UsersController < ApplicationController
       user.save
       # "Welcome back #{params[:username]}! your session info is #{session[:username]} #{session[:logged_in]}"
       # "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]} and your karma is #{user[:karma]}"
+      @account_message = "Welcome back!"
+      p @account_message
       redirect '/'
 
 
     else
-      "You failed your password check, roll again"
+      @account_message = "Your password was wrong.  Try again or call the admin at (800) No-Admin"
+      p @account_message
+      redirect '/users'
     end
 
   end
@@ -127,6 +124,8 @@ class UsersController < ApplicationController
     @logoutuser.logged_in = false
     @logoutuser.save
     session[:logged_in] = false
+    @account_message = "You have logged out."
+    p @account_message
     redirect '/'
 
   end
