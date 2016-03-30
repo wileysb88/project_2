@@ -1,7 +1,10 @@
 body {
   margin: 10px;
   font-family: 'Special Elite', serif;
+  background: rgba(14, 17, 15, 0.94);
+  color: white;
 }
+
 
 header{
 }
@@ -15,7 +18,7 @@ h1 {
 
 nav {
   text-align: right;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 li {
