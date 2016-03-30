@@ -79,3 +79,145 @@ label{
 
 
 /* VVVVVVVVVVVV Reference styles from first project
+
+body {
+  background-color: red;
+}
+
+.preposterous {
+
+transition: all 15s ease-in-out;
+-webkit-transform: rotate(0) scale(1) translate(0px);
+
+}
+
+.preposterous:hover {
+transform: rotate(11775deg) scale(.01) translate(100px);
+-webkit-transform: rotate(11775deg) scale(2) translate(100px);
+-moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+-o-transform: rotate(1725deg) scale(.01) translate(100px);
+-ms-transform: rotate(1725deg) scale(.01) translate(100px);
+-moz-box-shadow: 0px 0px 75px #000000;
+-webkit-box-shadow: 0px 0px 75px #000000;
+box-shadow: 0px 0px 50px #000000;
+transition: all 15s ease-in-out;
+background-color: green;
+font-size: 99px;
+color: red;
+border: 20px solid blue;
+-webkit-filter: blur(20px);
+filter: blur(20px);
+}
+
+.preposterous2:hover {
+transform: rotate(-1775deg) scale(.01) translate(50px);
+-webkit-transform: rotate(-1775deg) scale(.01) translate(3000px);
+-moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+-o-transform: rotate(1725deg) scale(.01) translate(100px);
+-ms-transform: rotate(1725deg) scale(.01) translate(100px);
+-moz-box-shadow: 0px 0px 75px #000000;
+-webkit-box-shadow: 0px 0px 75px #000000;
+box-shadow: 0px 0px 50px #000000;
+transition: all 15s ease-in-out;
+background-color: blue;
+font-size: 99px;
+color: red;
+border: 20px solid blue;
+-webkit-filter: blur(20px);
+filter: blur(20px);
+}
+
+.preposterous3:hover {
+transform: rotate(-1775deg) scale(.01) translate(50px);
+-webkit-transform: rotate(-11775deg) scale(.01) translate(1000px);
+-moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+-o-transform: rotate(1725deg) scale(.01) translate(100px);
+-ms-transform: rotate(1725deg) scale(.01) translate(100px);
+-moz-box-shadow: 0px 0px 75px #000000;
+-webkit-box-shadow: 0px 0px 75px #000000;
+box-shadow: 0px 0px 50px #000000;
+transition: all 15s ease-in-out;
+background-color: orange;
+font-size: 99px;
+color: purple;
+border: 20px solid blue;
+-webkit-filter: blur(20px);
+filter: blur(20px);
+}
+
+.abrasive {
+  position: fixed;
+  opacity: .0;
+  transition: all 15s ease-in-out;
+}
+
+.abrasive:hover{
+  opacity: 1;
+  -webkit-transform: rotate(-175deg) scale(4) translate(1000px);
+  -moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+  -o-transform: rotate(1725deg) scale(.01) translate(100px);
+  -ms-transform: rotate(1725deg) scale(.01) translate(100px);
+  transition: all 30s ease-in-out;
+}
+
+.block {
+  display: inline-block;
+}
+
+.center {
+  position: fixed;
+  top:calc(50% - 50px/2 - 200px); /* height divided by 2*/
+  left:calc(50% - 50px/2 - 125px);
+  -webkit-transform: scale(2) translate(0px);
+}
+
+.abrasive2 {
+  position: fixed;
+  opacity: 0;
+  -webkit-transform: scale(.1);
+}
+
+.abrasive2:hover {
+  opacity: 1;
+  -webkit-transform: rotate(-11775deg) scale(10) translate(1000px);
+  -moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+  -o-transform: rotate(1725deg) scale(.01) translate(100px);
+  -ms-transform: rotate(1725deg) scale(.01) translate(100px);
+  transition: all 15s ease-in-out;
+}
+
+.abrasive3 {
+  position: fixed;
+  opacity: 1;
+  -webkit-transform: rotate(-11775deg) scale(.01) translate(-1000px);
+  -moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+  -o-transform: rotate(1725deg) scale(.01) translate(100px);
+  -ms-transform: rotate(1725deg) scale(.01) translate(100px);
+  transition: all 25s ease-in-out;
+}
+
+.abrasive3:hover {
+  opacity: 1;
+  transition: all 15s ease-in-out;
+  opacity: 0;
+  -webkit-transform: scale(10) translate(500px);
+
+}
+
+.abrasive4 {
+  position: fixed;
+  opacity: 1;
+  -webkit-transform: rotate(-11775deg) scale(.01) translate(-1000px);
+  -moz-transform: rotate(1725deg) scale(1.8) translate(100px);
+  -o-transform: rotate(1725deg) scale(.01) translate(100px);
+  -ms-transform: rotate(1725deg) scale(.01) translate(100px);
+  transition: all 25s ease-in-out;
+}
+
+.abrasive4:hover {
+  opacity: 1;
+  transition: all 15s ease-in-out;
+  opacity: 0;
+  -webkit-transform: scale(10) translate(-500px);
+
+}
