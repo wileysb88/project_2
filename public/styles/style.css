@@ -5,6 +5,11 @@ body {
   color: white;
 }
 
+header {
+  margin: 20px;
+}
+
+
 .navbar-custom  {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
@@ -20,8 +25,7 @@ label {
   color: white;
 }
 
-header{
-}
+
 
 .fixed-footer {
   position: fixed;
