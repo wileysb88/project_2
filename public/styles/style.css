@@ -16,6 +16,7 @@ h1 {
 
 }
 
+<<<<<<< HEAD
 nav {
   text-align: right;
   background-color: rgba(255, 255, 255, 0.05);
@@ -28,6 +29,11 @@ li {
 .username_or_login{
   text-align: right;
   text-size: 12px;
+=======
+
+button {
+  margin-top: 5px;
+>>>>>>> b43ad05382d1c03eb0757300a59e70217dcf5cf8
 }
 
 .welcome_blurb{
