@@ -41,7 +41,7 @@ class RestaurantsController < ApplicationController
     # end
   rest.save
   puts params
-  redirect '/restaurants/all'
+  redirect '/'
 
   end
 
@@ -60,7 +60,7 @@ class RestaurantsController < ApplicationController
     # end
   rest.save
   puts params
-  redirect '/restaurants/all'
+  redirect '/'
 
   end
 

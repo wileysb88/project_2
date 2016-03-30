@@ -21,10 +21,26 @@
     <div class="">
         <div class="col-md-6">
           <% @sorted_restaurants.each do |rest| %>
-              <div class="rest-list">
+            <% if rest.vote_amount >= 10 %>
+              <% @vote_class = 'high-vote' %>
+            <% elsif rest.vote_amount >= 0 %>
+              <% @vote_class = 'med-vote' %>
+              <% else rest.vote_amount < 0 %>
+              <% @vote_class = 'low-vote' %>
+            <% end %>
+
+              <div class="rest-list <%= @vote_class %> ">
                 <p><%= @rest_rank %>.  <%= rest.name %> </p>
                 <p>Score: <%= rest.vote_amount %> </p>
                 <hr>
+                  <form class="" action="/restaurants/voteup" method="post">
+                    <input type="hidden" name="id" value="<%= rest.id %>">
+                    <button class="btn-primary" type="submit" name="button" style="display: inline">Vote up</button>
+                  </form>
+                  <form class="" action="/restaurants/votedown" method="post">
+                    <input type="hidden" name="id" value="<%= rest.id %>">
+                    <button class="btn-danger" type="submit" name="button" style="display: inline">Vote down</button>
+                  </form>
               </div>
               <% @rest_rank += 1 %>
           <% end %>

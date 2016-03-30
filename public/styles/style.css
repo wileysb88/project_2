@@ -77,6 +77,18 @@ label{
   margin: 10px;
 }
 
+.high-vote {
+  background: darkgreen;
+}
+
+.med-vote {
+  background: orange;
+}
+
+.low-vote {
+  background: darkred;
+}
+
 
 
 
