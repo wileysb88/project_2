@@ -16,6 +16,7 @@ h1 {
 
 }
 
+<<<<<<< HEAD
 nav {
   text-align: right;
   background-color: rgba(255, 255, 255, 0.05);
@@ -28,22 +29,50 @@ li {
 .username_or_login{
   text-align: right;
   text-size: 12px;
+=======
+
+button {
+  margin-top: 5px;
+>>>>>>> b43ad05382d1c03eb0757300a59e70217dcf5cf8
 }
 
 .welcome_blurb{
   text-align: center;
+  font-size: 36px;
+  margin: 10px;
+}
+
+.a_register{
+  font-size: 10px;
+  display: inline-block;
+}
+
+.login_form {
+  font-size: 10px;
+  display: inline-block;
 }
 
 
-
-.topper{
+.topper_restaurant{
   text-align: center;
   background: rgba(40, 96, 144, 0.5);
   height: 50px;
   margin-bottom: 5px;
   font-size: 36px;
-  border-radius
+  border: 1px solid white;
+  border-radius: 3%;
+
 }
+.topper_user{
+  text-align: center;
+  background: rgba(40, 96, 144, 0.5);
+  height: 50px;
+  margin-bottom: 5px;
+  font-size: 36px;
+  border: 1px solid white;
+  border-radius: 3%;
+}
+
 
 label{
   margin-right: 5px;
