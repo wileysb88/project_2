@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default navbar-custom">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -55,7 +55,7 @@
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/">HOME</a></li>
               <li><a href="/restaurants">RESTAURANT</a></li>
@@ -75,8 +75,13 @@
     <%= yield %>
 
 
+    <footer> <%= erb :welcome %> </footer>
+
     <!--  PRE-FAB JS SCRIPTS-->
+
+
     <script type="text/javascript" src="/scripts/jquery.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap.js"></script>
 
     <!--  CUSTOM JS SCRIPTS-->
     <script type="text/javascript" src="/scripts/app.js"></script>

@@ -27,6 +27,13 @@ class ApplicationController < Sinatra::Base
       p @karmaclass
     end
 
+    if !session[:logged_in]
+      @welcome_message = "<div class='row welcome_blurb fixed-footer'>
+        Word of mouth: by the people, for the people. Don't let big websites tell you what to do, listen to your neighbors! Recommend restaurants by posting details about your favorite spots. Like other user's posts to echo the sentiments! The more likes you get, the more credit you gain as a neighbor! Build up your karma when other users like your posts!
+
+      </div>"
+    end
+
 
     # if user = User[id: session[:current_user_id]]
 
