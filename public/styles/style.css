@@ -1,3 +1,9 @@
+@media query (max-width: 580px) {
+  body {
+    margin: auto !important;
+  }
+}
+
 body {
   margin: 20px;
   font-family: 'Special Elite', serif;
@@ -13,7 +19,9 @@ header {
   margin-bottom: 20px;
 }
 
-
+.login_group{
+  margin-bottom: 10px;
+}
 .navbar-custom  {
   background-color: rgb(41, 41, 41);
   color: black;
@@ -64,6 +72,7 @@ li:hover {
 .username_or_login{
   text-align: right;
   text-size: 12px;
+  margin-top: 30px;
 }
 
 .welcome_blurb{
@@ -89,15 +98,15 @@ label {
 }
 
 .karma-high {
-  color: blue;
+  color: rgb(30, 58, 84);
 }
 
 .karma-med {
-  color: orange;
+  color: rgb(28, 31, 29);
 }
 
 .karma-low {
-  color: darkred;
+  color: rgb(97, 23, 23);
 }
 
 .notFound {
@@ -149,15 +158,15 @@ label {
 }
 
 .high-vote {
-  background: darkgreen;
+  background: rgb(30, 58, 84);
 }
 
 .med-vote {
-  background: orange;
+  background: rgb(28, 31, 29);
 }
 
 .low-vote {
-  background: darkred;
+  background: rgb(97, 23, 23);
 }
 
 
