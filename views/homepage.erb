@@ -43,6 +43,10 @@
                       <input type="hidden" name="id" value="<%= rest.id %>">
                       <button class="btn-danger" type="submit" name="button" style="display: inline-block">Vote down</button>
                     </form>
+                    <form class="" action="/restaurants/goto" method="post" style="display: inline-block">
+                      <input type="hidden" name="id" value="<%= rest.id %>">
+                      <button class="btn-info" type="submit" name="button" style="display: inline-block">Go to!</button>
+                    </form>
                     <div style="display: inline-block; float: right">Score: <%= rest.vote_amount %> </div>
                   </div>
               </div>

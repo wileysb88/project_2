@@ -66,6 +66,11 @@ class RestaurantsController < ApplicationController
 
   end
 
+  post '/goto' do
+    @goto_rest = Restaurant[id: params[:id]]
+    erb :restviewer
+  end
+
   post '/delete' do
 
   params[:id]
