@@ -15,7 +15,6 @@
   <br />
     <div class="">
         <div class="col-md-6">
-<<<<<<< HEAD
           <% @sorted_restaurants.each do |rest| %>
               <div class="rest-list">
                 <p><%= @rest_rank %>.  <%= rest.name %> </p>
@@ -24,26 +23,6 @@
               </div>
               <% @rest_rank += 1 %>
           <% end %>
-          <!-- 1.<hr>
-=======
-<<<<<<< HEAD
-            <% @sorted_restaurants.each do |rest| %>
-            <p>Restaurant: <%= rest.name %> </p>
-            <p>Score: <%= rest.vote_amount %> </p>
-            <hr>
-          <% end %>
-=======
-          <!-- going to include top ten from :vote_amount in BARS class -->
-          <!-- Bars.sort_by { |bar| bar[:vote_amount]}.reverse!  -->
-          <!-- need to add a loop to only include the top 10 -->
-          <!-- <% @restaurants.sort_by { |rest| rest[:vote_amount]}.reverse! %>
-          i = 0
-          num = 11
-          while i<num do
-            puts "#{i + 1}. #{rest.name}. #{rest.neighborhood}. #{rest.tags}. #{rest.vote_amount}"
-            puts "#{rest.description}"
-            i += 1
-          end -->
 
             <p>Restaurant: <%= rest.name %> </p>
             <p>Description: <%= rest.description %> </p>
@@ -61,18 +40,10 @@
 
             <hr>
           <% end %>
-
->>>>>>> b43ad05382d1c03eb0757300a59e70217dcf5cf8
-          1.<hr>
->>>>>>> eadf2306d996477de232363790efa38b0b5ba05e
-          2.<hr>
-          3.<hr>
-          4.<hr>
-          5.<hr> -->
         </div>
         <div class="col-md-6">
           <% @sorted_users.each do |user| %>
-              <div class="rest-list">
+              <div class="user-list">
                 <p><%= @user_rank %>.  <%= user.username %> </p>
                 <p>Karma: <%= user.karma %> </p>
                 <hr>
