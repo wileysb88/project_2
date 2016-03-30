@@ -2,9 +2,11 @@ class RestaurantsController < ApplicationController
 
 
   get '/' do
-
+    if !session[:logged_in]
+      session[:account_message] = "You must be logged in to post a restaurant"
+      redirect '/users'
+    end
     erb :restaurants
-    # redirect '/users' if !session[:logged_in]
 
   end
 
