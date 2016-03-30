@@ -17,7 +17,11 @@ var xaxix = Math.floor(Math.random()* 1000);
 // $('img').click(function() {
 //   $(this).toggleClass('fast');
 // })
-
+// $('.rest-list').on('click', function() {
+//   var $copy = $(this).clone();
+//   $('header').append($copy);
+//   $copy.append(description);
+// });
 
 var stonemenHide = function() {
   $('.abrasive').hide();
