@@ -10,15 +10,17 @@
 </div>
 
 <div class="col-md-12 top_ten">
-  <div class="col-md-6 topper" style="float: left">
+  <div class="col-xs-6 topper" style="float: left">
     TOP RESTAURANTS
   </div>
-  <div class="col-md-6 topper" style="float: right; background: darkred">
+  <div class="col-xs-6 topper" style="float: right; background: darkred">
     TOP USERS
   </div>
   <br />
+  <br />
+  <br />
     <div class="">
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <% @sorted_restaurants.each do |rest| %>
             <% if rest.vote_amount >= 10 %>
               <% @vote_class = 'high-vote' %>
@@ -49,7 +51,7 @@
           4.<hr>
           5.<hr> -->
         </div>
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <% @sorted_users.each do |user| %>
               <div class="rest-list">
                 <p><%= @user_rank %>.  <%= user.username %> </p>
