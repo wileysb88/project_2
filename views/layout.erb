@@ -26,11 +26,14 @@
               <div class="<%= @karmaclass %>">Hello, <%= @current_user %> </div><a href='users/logout'>Logout</a>
               <% else %>
               <div>
-              <form class="form-inline" action="/users/login" method="post">
-                <input type="text" name="username" value="" placeholder="Username">
-                <input type="password" name="password" value="" placeholder="password">
-                <button type="submit" class="btn btn-primary" name="button">LOG IN</button><br>
-                <a href='/users/'>Not registered? Sign up!</a>
+              <form class="form-inline login_form" action="/users/login" method="post">
+                <div class="col-xs-2 col-s-3">
+                    <input type="text" name="username" value="" placeholder="Username">
+                    <input type="password" name="password" value="" placeholder="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-s" name="button">LOG IN</button><br>
+                <a class="a_register" href='/users/'>Not registered? Sign up!</a>
               </form></div>
               <!-- <a href="/users">LOGIN/REGISTER</a> -->
             <% end %>

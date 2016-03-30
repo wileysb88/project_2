@@ -32,18 +32,41 @@ li {
 
 .welcome_blurb{
   text-align: center;
+  font-size: 36px;
+  margin: 10px;
+}
+
+.a_register{
+  font-size: 10px;
+  display: inline-block;
+}
+
+.login_form {
+  font-size: 10px;
+  display: inline-block;
 }
 
 
-
-.topper{
+.topper_restaurant{
   text-align: center;
   background: rgba(40, 96, 144, 0.5);
   height: 50px;
   margin-bottom: 5px;
   font-size: 36px;
-  border-radius
+  border: 1px solid white;
+  border-radius: 3%;
+
 }
+.topper_user{
+  text-align: center;
+  background: rgba(40, 96, 144, 0.5);
+  height: 50px;
+  margin-bottom: 5px;
+  font-size: 36px;
+  border: 1px solid white;
+  border-radius: 3%;
+}
+
 
 label{
   margin-right: 5px;
