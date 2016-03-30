@@ -78,11 +78,8 @@ label{
 
 
 
-/* VVVVVVVVVVVV Reference styles from first project
+/* VVVVVVVVVVVV Reference styles from first project */
 
-body {
-  background-color: red;
-}
 
 .preposterous {
 
@@ -166,7 +163,7 @@ filter: blur(20px);
 
 .center {
   position: fixed;
-  top:calc(50% - 50px/2 - 200px); /* height divided by 2*/
+  top:calc(50% - 50px/2 - 200px);
   left:calc(50% - 50px/2 - 125px);
   -webkit-transform: scale(2) translate(0px);
 }
