@@ -22,12 +22,33 @@ class UsersController < ApplicationController
 
  #-----------  VVVVVVVVVV        Test Paths
 
-  get '/all' do
-    bouttosort = User.all
-    @sorted_users2 = bouttosort.sort_by { |user| user[:karma]}.reverse!
-    puts @sorted_users2
-    erb :loginlist
+  get '/account' do
+    if !session[:logged_in]
+      redirect '/users'
+    end
 
+    @update_user = User[id: session[:current_user_id]]
+    erb :account
+
+  end
+
+  post '/update' do
+    # @all_users2 = User.all # this kinda sucks IRL but SOOOOONNN
+    # @all_users2.each do |user|
+    #   if (user.id == session[:current_user_id])
+        # user.password = params[:password_new]
+        # user.save
+    #   end
+    # end
+    user = User[id: session[:current_user_id]]
+    password = BCrypt::Password.create(params[:password_new])
+    puts user[:id]
+    puts password
+    user.password = password
+    user.save
+    puts user.password
+    p "IT UPDATED THE PASSWORD!"
+    redirect '/'
   end
 
 

@@ -7,7 +7,17 @@
 
 <div class="col-md-12 top_ten">
   <div class="col-md-6 topper" style="float: left">
-    Your Account
+    Your Account: <%= @update_user.username %>
+    <!-- <form action="/users/update" method="post">
+        <input class="form-control" type="text" name="new_username" value="" placeholder="Enter new username">
+      <input class="btn btn-danger form-control" type="submit" value="Save Changes">
+    </form> -->
+    <form action="/users/update" method="post">
+        <input type="hidden" name="id" value="<%= @update_user.id %>">
+        <input class="form-control" type="password" name="password" value="" placeholder="Enter current password">
+        <input class="form-control" type="password" name="password_new" value="" placeholder="Enter new password">
+      <input class="btn btn-danger form-control" type="submit" value="Save Changes">
+    </form>
   </div>
   <div class="col-md-6 topper" style="float: right; background: darkred">
     Your Restaurants
@@ -15,29 +25,7 @@
   <br />
     <div class="">
         <div class="col-md-6">
-          <form action="/account/update" method="post">
-              <input type="hidden" name="old_email" value="<%= @old_email %>">
-              <input class="form-control" type="text" name="name" value="" placeholder="Your name">
-              <input class="form-control" type="text" name="email" value="" placeholder="Your email">
-              <input class="form-control" type="password" name="password" value="" placeholder="Your sekrit psswd">
-              <input class="form-control" type="password" name="password_conf" value="" placeholder="Your sekrit psswd(again)">
-            <input class="btn btn-danger form-control" type="submit" value="Save Changes">
-          </form>
-          <!-- 1.<hr>
-          2.<hr>
-          3.<hr>
-          4.<hr>
-          5.<hr> -->
-        </div>
-        <div class="col-md-6">
-          <% @sorted_users.each do |user| %>
-              <div class="rest-list">
-                <p><%= @user_rank %>.  <%= user.username %> </p>
-                <p>Karma: <%= user.karma %> </p>
-                <hr>
-              </div>
-            <% @user_rank += 1 %>
-          <% end %>
-        </div>
+
+
     </div>
 </div>
