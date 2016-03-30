@@ -20,21 +20,26 @@
 
     <header>
       <div class="row">
-          <h1 class="col-md-10">CHOMP</h1>
-          <div class="username_or_login col-md-2">
+          <h1>CHOMP</h1>
+          <div class="username_or_login">
             <% if session[:logged_in] == true %>
               <div class="<%= @karmaclass %>">Hello, <%= @current_user %> </div><a href='users/logout'>Logout</a>
               <% else %>
               <div>
               <form class="form-inline" action="/users/login" method="post">
-                <input type="text" name="username" value="" placeholder="Username">
-                <input type="password" name="password" value="" placeholder="password">
-                <button type="submit" class="btn btn-primary" name="button">LOG IN</button><br>
-                <a href='/users/'>Not registered? Sign up!</a>
+                <div class="form-group">
+                  <input class="form-control col-s-3" type="text" name="username" value="" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input class="form-control col-s-3" type="password" name="password" value="" placeholder="password">
+                </div>
+                  <button type="submit" class="btn btn-primary btn-sm" name="button">LOG IN</button><br>
+                  <a href='/users/'>Not registered? Sign up!</a>
               </form></div>
               <!-- <a href="/users">LOGIN/REGISTER</a> -->
             <% end %>
           </div>
+        </div>
       </div>
 
       <nav class "navbar navbar-default">
