@@ -1,6 +1,11 @@
 window.onload = function() {
 
 animerror();
+stonemenHide();
+linkHide();
+
+setTimeout(stonemenShow(), 30000);
+setTimeout(linkShow(), 10000);
 
 
 };
@@ -14,13 +19,27 @@ var xaxix = Math.floor(Math.random()* 1000);
 // })
 
 
-var stonemen = function() {
-  var stones = $('<div> ')
+var stonemenHide = function() {
+  $('.abrasive').hide();
+};
+
+var linkHide = function() {
+  $('.myst-link').hide();
+};
+
+var linkShow = function() {
+  $('.myst-link').fadeIn(2000);
+};
+
+var stonemenShow = function() {
+  $('.abrasive').show();
 };
 
 var animerror = function() {
   $('.notFound').animate({ left: "+=5000", top: '+=5000', borderWidth: "1px"}, 15000);
 };
+
+stonemenHide();
 
 $('.notFound').click(function() {
   $(this).animate({ left: "+=5000", top: '+=5000', borderWidth: "1px"}, 1500);
