@@ -1,15 +1,28 @@
 body {
-  margin: 10px;
+  margin: 20px;
   font-family: 'Special Elite', serif;
   background: rgba(14, 17, 15, 0.94);
   color: white;
 }
 
+header {
+  margin: 20px;
+}
+
+.banner {
+  margin-bottom: 20px;
+}
+
+
 .navbar-custom  {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  background-color: rgb(41, 41, 41);
+  color: black;
   border: 1px solid black;
   border-radius: 2%;
+}
+
+.li_nav:hover {
+  color: white;
 }
 
 form {
@@ -20,8 +33,7 @@ label {
   color: white;
 }
 
-header{
-}
+
 
 .fixed-footer {
   position: fixed;
