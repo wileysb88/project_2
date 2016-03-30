@@ -54,7 +54,7 @@ nav {
 }
 
 .nav-a:hover {
-  background: white;
+  background: rgba(233, 233, 233, 0.5);
 }
 
 li:hover {
