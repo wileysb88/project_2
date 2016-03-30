@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # session[:account_message] = ""
 
   get '/' do
 
@@ -41,8 +42,8 @@ class UsersController < ApplicationController
     user.save
     puts user.password
     p "IT UPDATED THE PASSWORD!"
+    session[:account_message] = "Your password has been updated."
     redirect '/'
-    @account_message = "Your password has been updated."
   end
 
 
@@ -82,7 +83,7 @@ class UsersController < ApplicationController
       session[:current_user_id] = user[:id]
 
       logged_in = user[:logged_in]
-      @account_message = "Welcome to our site!"
+      session[:account_message] = "Welcome to our site!"
       redirect '/'
     # "hello your name is #{sessions[:username]} Welcome back! are you logged in? #{logged_in}"
 
@@ -104,14 +105,12 @@ class UsersController < ApplicationController
       user.save
       # "Welcome back #{params[:username]}! your session info is #{session[:username]} #{session[:logged_in]}"
       # "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]} and your karma is #{user[:karma]}"
-      @account_message = "Welcome back!"
-      p @account_message
+      session[:account_message] = "Welcome back!"
       redirect '/'
 
 
     else
-      @account_message = "Your password was wrong.  Try again or call the admin at (800) No-Admin"
-      p @account_message
+      session[:account_message] = "Your password was wrong.  Try again or call the admin at (800) No-Admin"
       redirect '/users'
     end
 
@@ -124,8 +123,7 @@ class UsersController < ApplicationController
     @logoutuser.logged_in = false
     @logoutuser.save
     session[:logged_in] = false
-    @account_message = "You have logged out."
-    p @account_message
+    session[:account_message] = "You have logged out."
     redirect '/'
 
   end
