@@ -31,17 +31,20 @@
             <% end %>
 
               <div class="rest-list <%= @vote_class %> ">
-                <p><%= @rest_rank %>.  <%= rest.name %> </p>
-                <p>Score: <%= rest.vote_amount %> </p>
+                <div style="display: inline-block"><%= @rest_rank %>.  <%= rest.name %> </div>
+                <div style="display: inline-block; float: right">Poster: <%= User[id: rest.poster_id].username %> </div>
                 <hr>
-                  <form class="" action="/restaurants/voteup" method="post">
-                    <input type="hidden" name="id" value="<%= rest.id %>">
-                    <button class="btn-primary" type="submit" name="button" style="display: inline">Vote up</button>
-                  </form>
-                  <form class="" action="/restaurants/votedown" method="post">
-                    <input type="hidden" name="id" value="<%= rest.id %>">
-                    <button class="btn-danger" type="submit" name="button" style="display: inline">Vote down</button>
-                  </form>
+                  <div style="margin: auto">
+                    <form class="" action="/restaurants/voteup" method="post" style="display: inline-block">
+                      <input type="hidden" name="id" value="<%= rest.id %>">
+                      <button class="btn-primary" type="submit" name="button" style="display: inline-block">Vote up</button>
+                    </form>
+                    <form class="" action="/restaurants/votedown" method="post" style="display: inline-block">
+                      <input type="hidden" name="id" value="<%= rest.id %>">
+                      <button class="btn-danger" type="submit" name="button" style="display: inline-block">Vote down</button>
+                    </form>
+                    <div style="display: inline-block; float: right">Score: <%= rest.vote_amount %> </div>
+                  </div>
               </div>
               <% @rest_rank += 1 %>
           <% end %>
@@ -53,7 +56,7 @@
         </div>
         <div class="col-xs-6">
           <% @sorted_users.each do |user| %>
-              <div class="rest-list">
+              <div class="user-list">
                 <p><%= @user_rank %>.  <%= user.username %> </p>
                 <p>Karma: <%= user.karma %> </p>
                 <hr>
