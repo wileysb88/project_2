@@ -2,6 +2,7 @@ window.onload = function() {
 
 animerror();
 
+
 };
 
 
@@ -12,6 +13,11 @@ var xaxix = Math.floor(Math.random()* 1000);
 //   $(this).toggleClass('fast');
 // })
 
+
+var stonemen = function() {
+  var stones = $('<div> ')
+};
+
 var animerror = function() {
   $('.notFound').animate({ left: "+=5000", top: '+=5000', borderWidth: "1px"}, 15000);
 };
@@ -21,6 +27,20 @@ $('.notFound').click(function() {
   // $(this).toggleClass('hover');
   $("html,body").animate({ scrollTop: 5000, scrollLeft: 5000 }, 15000);
 })
+
+
+
+
+
+
+
+
+
+// var stonemen = function() {
+//   var stones = $('
+//     <img src="http://fi.somethingawful.com/safs/titles/a3/4c/00188664.0006.gif" alt="Cat says 404 not found" class="preposterous2 block"/>');
+//   $('header').append(stones);
+// };
 
 
 // var makeMiddleEarth = function () {
