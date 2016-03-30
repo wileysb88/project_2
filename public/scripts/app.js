@@ -28,7 +28,7 @@ var linkHide = function() {
 };
 
 var linkShow = function() {
-  $('.myst-link').fadeIn(2000);
+  $('.myst-link').fadeIn(7000);
 };
 
 var stonemenShow = function() {
