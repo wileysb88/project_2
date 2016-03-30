@@ -14,13 +14,25 @@
     </form> -->
     <form action="/users/update" method="post">
         <input type="hidden" name="id" value="<%= @update_user.id %>">
-        <input class="form-control" type="password" name="password" value="" placeholder="Enter current password">
         <input class="form-control" type="password" name="password_new" value="" placeholder="Enter new password">
       <input class="btn btn-danger form-control" type="submit" value="Save Changes">
     </form>
   </div>
   <div class="col-md-6 topper" style="float: right; background: darkred">
     Your Restaurants
+    <% @restaurants_list.each do |rest| %>
+        <% if @update_user.id == rest.poster_id %>
+          <div class="rest-list">
+            <p> <%= rest.name %> </p>
+            <p>Score: <%= rest.vote_amount %> </p>
+            <hr>
+            <form action="/restaurants/delete" method="post">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <input class="btn btn-danger form-control" type="submit" value="X">
+            </form>
+          </div>
+        <% end %>
+    <% end %>
   </div>
   <br />
     <div class="">

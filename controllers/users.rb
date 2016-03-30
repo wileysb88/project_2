@@ -26,9 +26,10 @@ class UsersController < ApplicationController
     if !session[:logged_in]
       redirect '/users'
     end
-
+    @restaurants_list = Restaurant.all
     @update_user = User[id: session[:current_user_id]]
     erb :account
+
 
   end
 

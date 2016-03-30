@@ -64,6 +64,16 @@ class RestaurantsController < ApplicationController
 
   end
 
+  post '/delete' do
+
+  params[:id]
+  rest = Restaurant[id: params[:id]]
+  rest.destroy
+  puts params
+  redirect '/users/account'
+
+  end
+
 end
 
 # create_table(:restaurants) do
