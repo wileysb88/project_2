@@ -1,5 +1,5 @@
 body {
-  margin: 10px;
+  margin: 20px;
   font-family: 'Special Elite', serif;
   background: rgba(14, 17, 15, 0.94);
   color: white;
@@ -7,6 +7,10 @@ body {
 
 header {
   margin: 20px;
+}
+
+.banner {
+  margin-bottom: 20px;
 }
 
 
