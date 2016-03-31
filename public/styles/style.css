@@ -209,8 +209,10 @@ label {
 #chatbox {
   overflow: scroll;
   margin-bottom: 20px;
+  max-height: 300px;
 }
-.chat_box{
+
+.chat_box {
   position: fixed;
   bottom: 100px;
 
