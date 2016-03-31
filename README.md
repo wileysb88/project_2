@@ -47,4 +47,15 @@ These were shortly change as we operated through. We prioritized our work in the
 - [ ] Filter search on all the restaurant posts
 - [ ] User groups
 
+**Installation Instructions:**
+
+Follow <a href="http://wileysb88.github.io/project_1/">THIS LINK</a> and begin to play!
+
+Follow <a href="https://github.com/wileysb88/project_2">THIS LINK</a> to check out my code on Github!
+
+
 **Unsolved Problems**
+
+- Improved stylized restaurant lists
+- Could add more info to the restaurant side of the account page
+-
