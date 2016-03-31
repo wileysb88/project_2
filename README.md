@@ -35,9 +35,10 @@ We kept scope reasonable by wanting to ensure each option added was logical and 
 
 ORIGINAL WIREFRAMES
 
-![WIREFRAME 1](public/styles/IMG_7513.JPG)
+![WIREFRAME 1](public/styles/wirefram_1.JPG)
 
-![WIREFRAME 2](public/styles/IMG_7514.JPG)
+![WIREFRAME 2](public/styles/wireframe_2.JPG)
+
 
 These were shortly change as we operated through. We prioritized our work in the below order:
 
@@ -47,6 +48,24 @@ These were shortly change as we operated through. We prioritized our work in the
 - [ ] Filter search on all the restaurant posts
 - [ ] User groups
 
+It lead us to a main page to which you have to log in or create a username and password:
+
+![MAIN PAGE 1](public/styles/mainpage.png)
+
+From here you can see the restaurants and users ranked from most popular to least popular! You can also click the "GO TO" button to read the users full post.
+
+If you want to see full detail posts on all restaurants, go to the **ALL RESTAURANTS** tab to enjoy all posts:
+
+![MAIN PAGE 2](public/styles/restaurants_view.png)
+
+Once you have reviewed restaurants, hope on the **CHOMP CHAT** with a simple click of the button and join the discussion live with all of your neighbors!
+
+![MAIN PAGE 3](public/styles/chomp_chat_view.png)
+
+Update your account or remove previous restaurant posts you have made.
+
+Come back and see what's hot and what's not at Chomp!
+
 **Installation Instructions:**
 
 Follow <a href="http://wileysb88.github.io/project_1/">THIS LINK</a> and begin to play!
@@ -54,8 +73,7 @@ Follow <a href="http://wileysb88.github.io/project_1/">THIS LINK</a> and begin t
 Follow <a href="https://github.com/wileysb88/project_2">THIS LINK</a> to check out my code on Github!
 
 
-**Unsolved Problems**
+**Unsolved Problems: **
 
 - Improved stylized restaurant lists
 - Could add more info to the restaurant side of the account page
--
