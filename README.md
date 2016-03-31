@@ -73,7 +73,7 @@ Follow <a href="http://wileysb88.github.io/project_1/">THIS LINK</a> and begin t
 Follow <a href="https://github.com/wileysb88/project_2">THIS LINK</a> to check out my code on Github!
 
 
-**Unsolved Problems: **
+**Unsolved Problems:**
 
 - Improved stylized restaurant lists
 - Could add more info to the restaurant side of the account page
