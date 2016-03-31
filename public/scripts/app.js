@@ -99,7 +99,6 @@ function getMessage() {
       console.log(typeof localStorage.getItem('lastMessageId'))
       console.log('--------------------')
       if (response.id.toString() !== localStorage.getItem('lastMessageId')) {
-          // do your work in here
           console.log(response.id)
           console.log(localStorage.getItem('lastMessageId'))
           $('#chatbox').append('<p>' + '<span style="color: rgb(49, 176, 213)">' + response.chat_name + '</span>' + ":  " + response.data + '</p>');
@@ -111,6 +110,24 @@ function getMessage() {
       console.log(err);
     }
   });
+}
+
+// $("#txt-msg").keyup(function(event){
+//   if(event.keyCode == 13){
+//       $("#snd-btn").click();
+//   }
+// });
+
+function searchKeyPress(e)
+{
+    // look for window.event in case event isn't passed in
+    e = e || window.event;
+    if (e.keyCode == 13)
+    {
+        document.getElementById('snd-btn').click();
+        return false;
+    }
+    return true;
 }
 
 // function sendChat() {
@@ -132,6 +149,7 @@ function getMessage() {
         console.log(error)
       }
     });
+    document.getElementById("txt-msg").value= "";
   });
 
 

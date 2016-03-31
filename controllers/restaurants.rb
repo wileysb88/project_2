@@ -68,6 +68,9 @@ class RestaurantsController < ApplicationController
 
   post '/goto' do
     @goto_rest = Restaurant[id: params[:id]]
+    user = User[id: [@goto_rest.poster_id]]
+    user.karma += 1
+    user.save
     erb :restviewer
   end
 
