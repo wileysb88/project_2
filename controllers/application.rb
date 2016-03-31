@@ -68,6 +68,6 @@ class ApplicationController < Sinatra::Base
   not_found do
     erb :notfound
   end
-
+# <footer> <%= erb :chat %> </footer>
 
 end
