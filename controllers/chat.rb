@@ -23,7 +23,7 @@ class ChatController < ApplicationController
     # end
 
     puts params
-    Chat.create chatter_id: session[:current_user_id], message: params[:message], buffer: "", latest: true
+    Chat.create chatter_id: session[:current_user_id] || 1, message: params[:message], buffer: "", latest: true
     puts Chat.last.message
     puts Chat.last.chatter_id
     # redirect '/'
