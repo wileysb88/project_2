@@ -3,6 +3,7 @@ window.onload = function() {
 animerror();
 stonemenHide();
 linkHide();
+getMessage();
 
 setTimeout(stonemenShow(), 30000);
 setTimeout(linkShow(), 10000);
@@ -101,4 +102,34 @@ $('#dance').click(function() {
   // $(this).removeClass('missing');
   $('img').toggleClass('panda')
   // $("html,body").animate({ scrollTop: -5000, scrollLeft: -5000 }, 15000);
+})
+
+var getMessage = $.ajax({
+  type: 'get',
+  dataType: 'json',
+  url: '/chat/last',
+  success: function(message) {
+      console.log(message);
+      // var latestMessage = $('<aside></aside>');
+      // var chatName = $('<div style="inline-block"></div>');
+      // chatName.html(message.chat_name + ": ");
+      // console.log(message.name);
+      // latestMessage.append(chatName);
+      // var theMessage = $('<div style="inline-block"></div>');
+      // theMessage.html(message.data);
+      // latestMessage.append(theMessage);
+      // $('#chatbox').append(latestMessage);
+      $('#chatbox').append('<p>' + message.chat_name + ":  " + message.data + '</p>');
+      setTimeout(getMessage(), 500);
+
+    },
+    error: function(error) {
+      console.log(error);
+  }
+});
+
+// '<div class="chatName" style="inline">'
+
+$('#chatToggle').click(function() {
+	$('.chat').slideToggle();
 })
