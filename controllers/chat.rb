@@ -7,6 +7,7 @@ class ChatController < ApplicationController
     # end
 
   {
+    :id => Chat.last.id,
     :chat_name => User[id: [Chat.last.chatter_id]].username,
     :data => Chat.last.message,
     :latest => Chat.last.latest

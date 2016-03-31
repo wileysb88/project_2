@@ -1,10 +1,12 @@
 window.onload = function() {
 
+
+getMessage();
 animerror();
 stonemenHide();
 linkHide();
-getMessage();
-$('footer').hide();
+
+$('.chat').toggle();
 
 setTimeout(stonemenShow(), 30000);
 setTimeout(linkShow(), 10000);
@@ -12,7 +14,7 @@ setTimeout(linkShow(), 10000);
 
 };
 
-
+// setInterval(getMessage(), 100);
 var yaxix = Math.floor(Math.random()* 1000);
 var xaxix = Math.floor(Math.random()* 1000);
 
@@ -45,7 +47,6 @@ var animerror = function() {
   $('.notFound').animate({ left: "+=5000", top: '+=5000', borderWidth: "1px"}, 15000);
 };
 
-stonemenHide();
 
 $('.notFound').click(function() {
   $(this).animate({ left: "+=5000", top: '+=5000', borderWidth: "1px"}, 1500);
@@ -107,29 +108,79 @@ $('#dance').click(function() {
   // $("html,body").animate({ scrollTop: -5000, scrollLeft: -5000 }, 15000);
 })
 
-var getMessage = $.ajax({
-  type: 'get',
-  dataType: 'json',
-  url: '/chat/last',
-  success: function(message) {
-      console.log(message);
-      // var latestMessage = $('<aside></aside>');
-      // var chatName = $('<div style="inline-block"></div>');
-      // chatName.html(message.chat_name + ": ");
-      // console.log(message.name);
-      // latestMessage.append(chatName);
-      // var theMessage = $('<div style="inline-block"></div>');
-      // theMessage.html(message.data);
-      // latestMessage.append(theMessage);
-      // $('#chatbox').append(latestMessage);
-      $('#chatbox').append('<p>' + message.chat_name + ":  " + message.data + '</p>');
-      setTimeout(getMessage(), 500);
+// var getMessage = $.ajax({
+//   type: 'get',
+//   dataType: 'json',
+//   url: '/chat/last',
+//   success: function(message) {
+//       console.log(message);
+//       // var latestMessage = $('<aside></aside>');
+//       // var chatName = $('<div style="inline-block"></div>');
+//       // chatName.html(message.chat_name + ": ");
+//       // console.log(message.name);
+//       // latestMessage.append(chatName);
+//       // var theMessage = $('<div style="inline-block"></div>');
+//       // theMessage.html(message.data);
+//       // latestMessage.append(theMessage);
+//       // $('#chatbox').append(latestMessage);
+//       $('#chatbox').append('<p>' + message.chat_name + ":  " + message.data + '</p>');
+//       // setTimeout(getMessage(), 500);
+//
+//     },
+//     error: function(error) {
+//       console.log(error);
+//   }
+// });
 
-    },
-    error: function(error) {
-      console.log(error);
+$.ajax({
+type: 'get',
+dataType: 'json',
+url: '/chat/last',
+success: function(message) {
+    console.log(localStorage.getItem('lastMessageId'));
+
+    if (message.id !== localStorage.getItem('lastMessageId')) {
+      console.log(localStorage.getItem('lastMessageId'))
+      $('#chatbox').append('<p>' + message.chat_name + ":  " + message.data + '</p>');
+      localStorage.setItem('lastMessageId', message.id);
+    }
+    console.log('we ran it')
+  },
+  error: function(error) {
+    console.log(error);
   }
 });
+
+var messageCheckInterval = setInterval(getMessage, 2000);
+
+function getMessage() {
+  $.ajax({
+    type: 'get',
+    dataType: 'json',
+    url: '/chat/last',
+    success: function(response) {
+      console.log(response.id);
+      console.log('response id  -----------------------')
+      console.log(typeof response.id)
+      console.log(response)
+      console.log('response data ---------------------')
+      console.log(localStorage.getItem('lastMessageId'));
+      console.log(typeof localStorage.getItem('lastMessageId'))
+      console.log('--------------------')
+      if (response.id.toString() !== localStorage.getItem('lastMessageId')) {
+          // do your work in here
+          console.log(response.id)
+          console.log(localStorage.getItem('lastMessageId'))
+          $('#chatbox').append('<p>' + response.chat_name + ":  " + response.data + '</p>');
+          localStorage.setItem('lastMessageId', response.id);
+        }
+        console.log('getMessage callback ran');
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+}
 
 // var  formData = "name=ravi&age=31";  //Name value Pair
 //     or
@@ -147,7 +198,8 @@ var getMessage = $.ajax({
       dataType : 'json',
       success: function(data)
       {
-        console.log(data)
+        console.log('post dataaaa------------------------')
+        console.log(data.n)
       },
       error: function (error)
       {
