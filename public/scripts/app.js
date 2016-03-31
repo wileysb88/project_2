@@ -80,6 +80,8 @@ $('.notFound').click(function() {
 // };
 //
 // makeMiddleEarth();
+// localStorage.setItem('lastMessageId', messageID);
+// localStorage.getItem('lastMessageId', messageID);
 
 
 $('#scroll').click(function() {
