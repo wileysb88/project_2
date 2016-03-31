@@ -7,6 +7,7 @@
   }
 }
 
+
 @media (min-width: 400px) {
   h1 {
     font-size: 36px!important;
@@ -16,11 +17,14 @@
     font-size: 26px!important;
     margin: auto!important;
   }
+  .welcome_blurb{
+    font-size: 18px!important;
+  }
 }
 
 
 
-@media (min-width: 884px) {
+@media (min-width: 887px) {
   h1 {
     font-size: 56px!important;
   }
@@ -209,6 +213,7 @@ label {
 .chat_box{
   position: fixed;
   bottom: 100px;
+
 }
 
 #snd-btn{
@@ -221,7 +226,6 @@ label {
 .chat {
   position: fixed;
 	border: 1px solid black;
-	/*height: 400px;*/
   width: 100%;
 	padding: 10px 0;
 	/*margin-top: 120px;*/
