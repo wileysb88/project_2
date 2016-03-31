@@ -151,7 +151,7 @@ success: function(message) {
   }
 });
 
-var messageCheckInterval = setInterval(getMessage, 2000);
+var messageCheckInterval = setInterval(getMessage, 500);
 
 function getMessage() {
   $.ajax({
@@ -171,7 +171,7 @@ function getMessage() {
           // do your work in here
           console.log(response.id)
           console.log(localStorage.getItem('lastMessageId'))
-          $('#chatbox').append('<p>' + response.chat_name + ":  " + response.data + '</p>');
+          $('#chatbox').append('<p>' + '<span style="color: rgb(49, 176, 213)">' + response.chat_name + '</span>' + ":  " + response.data + '</p>');
           localStorage.setItem('lastMessageId', response.id);
         }
         console.log('getMessage callback ran');
