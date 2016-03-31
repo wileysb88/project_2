@@ -4,6 +4,7 @@ animerror();
 stonemenHide();
 linkHide();
 getMessage();
+$('footer').hide();
 
 setTimeout(stonemenShow(), 30000);
 setTimeout(linkShow(), 10000);
@@ -129,6 +130,34 @@ var getMessage = $.ajax({
       console.log(error);
   }
 });
+
+// var  formData = "name=ravi&age=31";  //Name value Pair
+//     or
+//     var bla = $('#txt-msg').val();
+// var formData = {name:"ravi",age:"31"}; //Array
+
+// function sendChat() {
+  $('#snd-btn').click(function() {
+    var sendMessage = $('#txt-msg').val();
+    console.log(sendMessage);
+    $.ajax({
+      url : "/chat/last",
+      type: "post",
+      data : {message: sendMessage},
+      dataType : 'json',
+      success: function(data)
+      {
+        console.log(data)
+      },
+      error: function (error)
+      {
+        console.log(error)
+      }
+    });
+  });
+// };
+
+
 
 // '<div class="chatName" style="inline">'
 

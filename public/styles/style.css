@@ -7,12 +7,20 @@
 body {
   margin: 20px;
   font-family: 'Special Elite', serif;
-  background: rgba(14, 17, 15, 0.94);
+  background: black;
   color: white;
 }
 
 header {
   margin: 20px;
+}
+
+.title_icon{
+  height: 50px;
+}
+
+.login_icon{
+  height: 15px;
 }
 
 .banner {
