@@ -1,25 +1,66 @@
 <!-- Homepage.erb -->
 <div class="container-fluid">
   <div class="row welcome_blurb">
+<<<<<<< HEAD
     By the people, for the people. Come find bars and restaurants that the whole town is buzzing about. The more people that agree with your post, the more trustworthy the user! Eat, recommend and repeat!
+=======
+
+    <br />
+    Find your new favorite restaurant from your neighbors with CHOMP
+    <br />
+    <br />
+>>>>>>> 5a55682d1e0fcb5dc325e81671852112764534d2
   </div>
 </div>
 
 <div class="col-md-12 top_ten">
+<<<<<<< HEAD
   <div class="col-xs-2 col-s-3 col-md-6 topper_restaurant" style="float: left">
     TOP 10 RESTAURANTS
   </div>
   <div class="col-xs-2 col-s-3 col-md-6 topper_user" style="float: right">
     TOP 10 USERS
+=======
+  <div class="col-xs-6 topper" style="float: left">
+    RESTAURANTS RANKED
+  </div>
+  <div class="col-xs-6 topper" style="float: right; background: darkred">
+    USERS RANKED
+>>>>>>> 5a55682d1e0fcb5dc325e81671852112764534d2
   </div>
   <br />
+  <br />
+  <br />
     <div class="">
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <% @sorted_restaurants.each do |rest| %>
-              <div class="rest-list">
-                <p><%= @rest_rank %>.  <%= rest.name %> </p>
-                <p>Score: <%= rest.vote_amount %> </p>
+            <% if rest.vote_amount >= 10 %>
+              <% @vote_class = 'high-vote' %>
+            <% elsif rest.vote_amount >= 0 %>
+              <% @vote_class = 'med-vote' %>
+              <% else rest.vote_amount < 0 %>
+              <% @vote_class = 'low-vote' %>
+            <% end %>
+
+              <div class="rest-list <%= @vote_class %> ">
+                <div style="display: inline-block"><%= @rest_rank %>.  <%= rest.name %> </div>
+                <div style="display: inline-block; float: right">Poster: <%= User[id: rest.poster_id].username %> </div>
                 <hr>
+                  <div style="margin: auto">
+                    <form class="" action="/restaurants/voteup" method="post" style="display: inline-block">
+                      <input type="hidden" name="id" value="<%= rest.id %>">
+                      <button class="btn-primary" type="submit" name="button" style="display: inline-block">Vote up</button>
+                    </form>
+                    <form class="" action="/restaurants/votedown" method="post" style="display: inline-block">
+                      <input type="hidden" name="id" value="<%= rest.id %>">
+                      <button class="btn-danger" type="submit" name="button" style="display: inline-block">Vote down</button>
+                    </form>
+                    <form class="" action="/restaurants/goto" method="post" style="display: inline-block">
+                      <input type="hidden" name="id" value="<%= rest.id %>">
+                      <button class="btn-info" type="submit" name="button" style="display: inline-block">Go to!</button>
+                    </form>
+                    <div style="display: inline-block; float: right">Score: <%= rest.vote_amount %> </div>
+                  </div>
               </div>
               <% @rest_rank += 1 %>
           <% end %>
@@ -41,7 +82,7 @@
             <hr>
           <% end %>
         </div>
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <% @sorted_users.each do |user| %>
               <div class="user-list">
                 <p><%= @user_rank %>.  <%= user.username %> </p>

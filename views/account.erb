@@ -1,0 +1,50 @@
+<!-- Homepage.erb -->
+<div class="container-fluid">
+  <div class="row welcome_blurb">
+    By the people, for the people. Come find bars and restaurants that the whole town is buzzing about. Add a location and give us some feedback. ADD MORE DETAILS OF POSTS HERE
+  </div>
+</div>
+
+<div class="col-md-12 top_ten">
+  <div class="col-md-6 topper" style="float: left">
+    Your Account: <%= @update_user.username %>
+    <!-- <form action="/users/update" method="post">
+        <input class="form-control" type="text" name="new_username" value="" placeholder="Enter new username">
+      <input class="btn btn-danger form-control" type="submit" value="Save Changes">
+    </form> -->
+    <form action="/users/update" method="post">
+        <input type="hidden" name="id" value="<%= @update_user.id %>">
+        <input class="form-control" type="password" name="password_new" value="" placeholder="Enter new password">
+      <input class="btn btn-danger form-control" type="submit" value="Save Changes">
+    </form>
+  </div>
+  <div class="col-md-6 topper" style="float: right; background: darkred">
+    Your Restaurants
+    <% @restaurants_list.each do |rest| %>
+        <% if @update_user.id == rest.poster_id %>
+          <% if rest.vote_amount >= 10 %>
+            <% @vote_class = 'high-vote' %>
+          <% elsif rest.vote_amount >= 0 %>
+            <% @vote_class = 'med-vote' %>
+          <% else rest.vote_amount < 0 %>
+            <% @vote_class = 'low-vote' %>
+          <% end %>
+          <div class="rest-list <%= @vote_class %>">
+            <p> <%= rest.name %> </p>
+            <p>Score: <%= rest.vote_amount %> </p>
+            <hr>
+            <form action="/restaurants/delete" method="post">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <input class="btn btn-danger form-control" type="submit" value="X">
+            </form>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+  <br />
+    <div class="">
+        <div class="col-md-6">
+
+
+    </div>
+</div>

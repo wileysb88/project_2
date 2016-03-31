@@ -1,12 +1,60 @@
+@media query (max-width: 580px) {
+  body {
+    margin: auto !important;
+  }
+}
+
 body {
-  margin: 10px;
+  margin: 20px;
   font-family: 'Special Elite', serif;
-  background: rgba(14, 17, 15, 0.94);
+  background: black;
+  color: white;
+}
+
+header {
+  margin: 20px;
+}
+
+.title_icon{
+  height: 50px;
+}
+
+.login_icon{
+  height: 15px;
+}
+
+.banner {
+  margin-bottom: 20px;
+}
+
+.login_group{
+  margin-bottom: 10px;
+}
+.navbar-custom  {
+  background-color: rgb(41, 41, 41);
+  color: black;
+  border: 1px solid black;
+  border-radius: 2%;
+}
+
+.li_nav:hover {
+  color: white;
+}
+
+form {
+  color: black;
+}
+
+label {
   color: white;
 }
 
 
-header{
+
+.fixed-footer {
+  position: fixed;
+  background: black;
+  width: 100%;
 }
 
 
@@ -22,22 +70,31 @@ nav {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-li {
+.nav-a:hover {
+  background: rgba(233, 233, 233, 0.5);
+}
+
+li:hover {
   text-color: white;
 }
 
 .username_or_login{
   text-align: right;
   text-size: 12px;
+<<<<<<< HEAD
 =======
 
 button {
   margin-top: 5px;
 >>>>>>> b43ad05382d1c03eb0757300a59e70217dcf5cf8
+=======
+  margin-top: 30px;
+>>>>>>> 5a55682d1e0fcb5dc325e81671852112764534d2
 }
 
 .welcome_blurb{
   text-align: center;
+<<<<<<< HEAD
   font-size: 36px;
   margin: 10px;
 }
@@ -50,6 +107,10 @@ button {
 .login_form {
   font-size: 10px;
   display: inline-block;
+=======
+  font-size: 26px;
+  margin: 5px;
+>>>>>>> 5a55682d1e0fcb5dc325e81671852112764534d2
 }
 
 
@@ -62,8 +123,12 @@ button {
   border: 1px solid white;
   border-radius: 3%;
 
+<<<<<<< HEAD
 }
 .topper_user{
+=======
+.topper {
+>>>>>>> 5a55682d1e0fcb5dc325e81671852112764534d2
   text-align: center;
   background: rgba(40, 96, 144, 0.5);
   height: 50px;
@@ -73,22 +138,26 @@ button {
   border-radius: 3%;
 }
 
+<<<<<<< HEAD
 
 label{
+=======
+label {
+>>>>>>> 5a55682d1e0fcb5dc325e81671852112764534d2
   margin-right: 5px;
   margin-left: 7px;
 }
 
 .karma-high {
-  color: blue;
+  color: rgb(40, 96, 144);
 }
 
 .karma-med {
-  color: orange;
+  color: white;
 }
 
 .karma-low {
-  color: darkred;
+  color: rgb(201, 48, 44);
 }
 
 .notFound {
@@ -101,11 +170,75 @@ label{
 	box-shadow: 0px 0px 5px #ffffff;
   border-radius: 20px;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
+  transition: all .5s ease-in-out;
+
+}
+
+.user-list {
+  -moz-box-shadow: 0px 0px 5px #ffffff;
+	-webkit-box-shadow: 0px 0px 5px #ffffff;
+	box-shadow: 0px 0px 5px #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  transition: all .5s ease-in-out;
+
+}
+
+.rest-list:hover {
+  transform: rotate(0deg) scale(1.05) translate(20px);
+	-webkit-transform: rotate(0deg) scale(1.05) translate(20px);
+	-moz-transform: rotate(0deg) scale(1.05) translate(20px);
+	-o-transform: rotate(0deg) scale(1.05) translate(20px);
+	-ms-transform: rotate(0deg) scale(1.05) translate(20px);
+
+	transition: all .5s ease-in-out;
+  	border-color: white;
+}
+
+.user-list:hover {
+  transform: rotate(0deg) scale(1.05) translate(-20px);
+	-webkit-transform: rotate(0deg) scale(1.05) translate(-20px);
+	-moz-transform: rotate(0deg) scale(1.05) translate(-20px);
+	-o-transform: rotate(0deg) scale(1.05) translate(-20px);
+	-ms-transform: rotate(0deg) scale(1.05) translate(-20px);
+
+	transition: all .5s ease-in-out;
+  	border-color: white;
+}
+
+.high-vote {
+  background: rgb(30, 58, 84);
+}
+
+.med-vote {
+  background: rgb(28, 31, 29);
+}
+
+.low-vote {
+  background: rgb(97, 23, 23);
 }
 
 
+.chat {
+  position: fixed;
+	border: 1px solid black;
+	height: 200px;
+  width: 100%;
+	padding: 10px 0;
+	margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto
+	background: #8093ab;
+  text-align: center;
+}
 
+#chatToggle {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
 
 /* VVVVVVVVVVVV Reference styles from first project */
 

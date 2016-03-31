@@ -1,0 +1,28 @@
+<div class="col-md-6">
+
+    <% if @goto_rest.vote_amount >= 10 %>
+      <% @vote_class = 'high-vote' %>
+    <% elsif @goto_rest.vote_amount >= 0 %>
+      <% @vote_class = 'med-vote' %>
+      <% else @goto_rest.vote_amount < 0 %>
+      <% @vote_class = 'low-vote' %>
+    <% end %>
+
+      <div class="rest-list <%= @vote_class %> ">
+        <p><%= @goto_rest.name %> </p>
+        <p><%= @goto_rest.description %> </p>
+        <p>tags: <%= @goto_rest.tags %> </p>
+        <p>Score: <%= @goto_rest.vote_amount %> </p>
+        <p>Neighborhood: <%= @goto_rest.neighborhood %> </p>
+        <p>Author: <%= User[id: @goto_rest.poster_id].username %> </p>
+        <hr>
+        <% rest = @goto_rest %>
+          <form class="" action="/restaurants/voteup" method="post">
+            <input type="hidden" name="id" value="<%= rest.id %>">
+            <button class="btn-primary" type="submit" name="button" style="display: inline">Vote up</button>
+          </form>
+          <form class="" action="/restaurants/votedown" method="post">
+            <input type="hidden" name="id" value="<%= rest.id %>">
+            <button class="btn-danger" type="submit" name="button" style="display: inline">Vote down</button>
+          </form>
+      </div>

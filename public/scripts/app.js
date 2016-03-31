@@ -3,6 +3,7 @@ window.onload = function() {
 animerror();
 stonemenHide();
 linkHide();
+getMessage();
 
 setTimeout(stonemenShow(), 30000);
 setTimeout(linkShow(), 10000);
@@ -17,7 +18,11 @@ var xaxix = Math.floor(Math.random()* 1000);
 // $('img').click(function() {
 //   $(this).toggleClass('fast');
 // })
-
+// $('.rest-list').on('click', function() {
+//   var $copy = $(this).clone();
+//   $('header').append($copy);
+//   $copy.append(description);
+// });
 
 var stonemenHide = function() {
   $('.abrasive').hide();
@@ -28,7 +33,7 @@ var linkHide = function() {
 };
 
 var linkShow = function() {
-  $('.myst-link').fadeIn(2000);
+  $('.myst-link').fadeIn(7000);
 };
 
 var stonemenShow = function() {
@@ -75,6 +80,8 @@ $('.notFound').click(function() {
 // };
 //
 // makeMiddleEarth();
+// localStorage.setItem('lastMessageId', messageID);
+// localStorage.getItem('lastMessageId', messageID);
 
 
 $('#scroll').click(function() {
@@ -97,4 +104,34 @@ $('#dance').click(function() {
   // $(this).removeClass('missing');
   $('img').toggleClass('panda')
   // $("html,body").animate({ scrollTop: -5000, scrollLeft: -5000 }, 15000);
+})
+
+var getMessage = $.ajax({
+  type: 'get',
+  dataType: 'json',
+  url: '/chat/last',
+  success: function(message) {
+      console.log(message);
+      // var latestMessage = $('<aside></aside>');
+      // var chatName = $('<div style="inline-block"></div>');
+      // chatName.html(message.chat_name + ": ");
+      // console.log(message.name);
+      // latestMessage.append(chatName);
+      // var theMessage = $('<div style="inline-block"></div>');
+      // theMessage.html(message.data);
+      // latestMessage.append(theMessage);
+      // $('#chatbox').append(latestMessage);
+      $('#chatbox').append('<p>' + message.chat_name + ":  " + message.data + '</p>');
+      setTimeout(getMessage(), 500);
+
+    },
+    error: function(error) {
+      console.log(error);
+  }
+});
+
+// '<div class="chatName" style="inline">'
+
+$('#chatToggle').click(function() {
+	$('.chat').slideToggle();
 })

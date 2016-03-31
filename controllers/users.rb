@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  # session[:account_message] = ""
 
   get '/' do
 
@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   end
 
-  # @accountmessage = "You are logged in as #{session[:username]} Welcome back! Your id is #{session[:current_user_id]}"
 
 
 
@@ -22,12 +21,29 @@ class UsersController < ApplicationController
 
  #-----------  VVVVVVVVVV        Test Paths
 
-  get '/all' do
-    bouttosort = User.all
-    @sorted_users2 = bouttosort.sort_by { |user| user[:karma]}.reverse!
-    puts @sorted_users2
-    erb :loginlist
+  get '/account' do
+    if !session[:logged_in]
+      redirect '/users'
+    end
+    @vote_class = ""
+    @restaurants_list = Restaurant.all
+    @update_user = User[id: session[:current_user_id]]
+    erb :account
 
+
+  end
+
+  post '/update' do
+    user = User[id: session[:current_user_id]]
+    password = BCrypt::Password.create(params[:password_new])
+    puts user[:id]
+    puts password
+    user.password = password
+    user.save
+    puts user.password
+    p "IT UPDATED THE PASSWORD!"
+    session[:account_message] = "Your password has been updated."
+    redirect '/'
   end
 
 
@@ -67,6 +83,7 @@ class UsersController < ApplicationController
       session[:current_user_id] = user[:id]
 
       logged_in = user[:logged_in]
+      session[:account_message] = "Welcome to our site!"
       redirect '/'
     # "hello your name is #{sessions[:username]} Welcome back! are you logged in? #{logged_in}"
 
@@ -88,11 +105,13 @@ class UsersController < ApplicationController
       user.save
       # "Welcome back #{params[:username]}! your session info is #{session[:username]} #{session[:logged_in]}"
       # "hello you are #{session[:username]} Welcome back! Your id is #{session[:current_user_id]} and your karma is #{user[:karma]}"
+      session[:account_message] = "Welcome back!"
       redirect '/'
 
 
     else
-      "You failed your password check, roll again"
+      session[:account_message] = "Your password was wrong.  Try again or call the admin at (800) No-Admin"
+      redirect '/users'
     end
 
   end
@@ -104,6 +123,7 @@ class UsersController < ApplicationController
     @logoutuser.logged_in = false
     @logoutuser.save
     session[:logged_in] = false
+    session[:account_message] = "You have logged out."
     redirect '/'
 
   end

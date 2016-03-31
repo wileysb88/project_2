@@ -18,5 +18,12 @@ Sequel.migration do
       Integer :vote_amount
       String :neighborhood
     end
+    create_table(:chats) do
+      primary_key :id
+      Integer :chatter_id
+      Text :message
+      Text :buffer
+      Boolean :latest
+    end
   end
 end

@@ -1,25 +1,49 @@
 
 
+<div class="col-md-6">
   <% @restaurants.each do |rest| %>
+    <% if rest.vote_amount >= 10 %>
+      <% @vote_class = 'high-vote' %>
+    <% elsif rest.vote_amount >= 0 %>
+      <% @vote_class = 'med-vote' %>
+      <% else rest.vote_amount < 0 %>
+      <% @vote_class = 'low-vote' %>
+    <% end %>
 
-    <p>Restaurant: <%= rest.name %> </p>
-    <p>Description: <%= rest.description %> </p>
-    <p>tags: <%= rest.tags %> </p>
-    <p>Score: <%= rest.vote_amount %> </p>
-    <p>Neighborhood: <%= rest.neighborhood %> </p>
-    <p>Author <%= rest.poster_id %> </p>
-
-    <form class="" action="/restaurants/voteup" method="post">
-      <input type="hidden" name="id" value="<%= rest.id %>">
-      <button type="submit" name="button">Vote this restaurant up!</button>
-    </form>
-    <form class="" action="/restaurants/votedown" method="post">
-      <input type="hidden" name="id" value="<%= rest.id %>">
-      <button type="submit" name="button">Vote this restaurant down.</button>
-    </form>
-
-    <hr>
+      <div class="rest-list <%= @vote_class %> ">
+        <p><%= rest.name %> </p>
+        <p><%= rest.description %> </p>
+        <p>tags: <%= rest.tags %> </p>
+        <p>Score: <%= rest.vote_amount %> </p>
+        <p>Neighborhood: <%= rest.neighborhood %> </p>
+        <p>Author: <%= User[id: rest.poster_id].username %> </p>
+        <hr>
+          <form class="" action="/restaurants/voteup" method="post">
+            <input type="hidden" name="id" value="<%= rest.id %>">
+            <button class="btn-primary" type="submit" name="button" style="display: inline">Vote up</button>
+          </form>
+          <form class="" action="/restaurants/votedown" method="post">
+            <input type="hidden" name="id" value="<%= rest.id %>">
+            <button class="btn-danger" type="submit" name="button" style="display: inline">Vote down</button>
+          </form>
+      </div>
   <% end %>
+  <!-- 1.<hr>
+  2.<hr>
+  3.<hr>
+  4.<hr>
+  5.<hr> -->
+</div>
+
+
+  <!-- Integer :poster_id
+  String :name
+  Text :description
+  String :tags
+  Integer :vote_amount
+  String :neighborhood -->
+
+
 
 
   <!-- Integer :poster_id
