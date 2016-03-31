@@ -1,6 +1,31 @@
-@media query (max-width: 580px) {
-  body {
-    margin: auto !important;
+@media (min-width: 1px) {
+  h1 {
+    font-size: 16px!important;
+  }
+  .topper{
+    font-size: 16px!important;
+  }
+}
+
+@media (min-width: 400px) {
+  h1 {
+    font-size: 36px!important;
+    margin: auto!important;
+  }
+  .topper{
+    font-size: 26px!important;
+    margin: auto!important;
+  }
+}
+
+
+
+@media (min-width: 884px) {
+  h1 {
+    font-size: 56px!important;
+  }
+  .topper{
+    font-size: 36px!important;
   }
 }
 
@@ -179,25 +204,41 @@ label {
 
 #chatbox {
   overflow: scroll;
+  margin-bottom: 20px;
 }
+.chat_box{
+  position: fixed;
+  bottom: 100px;
+}
+
+#snd-btn{
+  position: fixed;
+  margin-top: 10px;
+}
+
+
 
 .chat {
   position: fixed;
 	border: 1px solid black;
-	height: 200px;
+	/*height: 400px;*/
   width: 100%;
 	padding: 10px 0;
-	margin-top: 120px;
+	/*margin-top: 120px;*/
   margin-left: auto;
-  margin-right: auto
-	background: #8093ab;
+  margin-right: auto;
+  margin-bottom: 120px;
+	background: rgba(0, 0, 0, 0.8);
   text-align: center;
+  bottom: 0px;
+
 }
 
 #chatToggle {
   position: fixed;
   bottom: 0px;
   right: 0px;
+  margin: 20px;
 }
 
 /* VVVVVVVVVVVV Reference styles from first project */
