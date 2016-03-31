@@ -169,6 +169,9 @@ label {
   background: rgb(97, 23, 23);
 }
 
+#chatbox {
+  overflow: scroll;
+}
 
 .chat {
   position: fixed;
