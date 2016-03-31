@@ -56,10 +56,8 @@ class ApplicationController < Sinatra::Base
     @rest_rank = 1
     @user_rank = 1
     @sorted_restaurants = bouttosort.sort_by { |rest| rest[:vote_amount]}.reverse!
-
     user_to_sort = User.all
     @sorted_users = user_to_sort.sort_by { |user| user[:karma]}.reverse!
-
 
     # erb :homepage, locals: { title: 'Homepage' }
     erb :homepage
