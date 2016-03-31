@@ -1,10 +1,14 @@
 # require 'sinatra/base'
+ENV['RACK_ENV'] ||= 'development'
 
 require 'bundler'
-Bundler.require
+Bundler.require :default, ENV['RACK_ENV'].to_sym
 
-DB = Sequel.sqlite('development.sqlite')
-
+DB = if ENV['RACK_ENV'] == 'production'
+  Sequel.connect(ENV['DATABASE_URL'])
+else
+  Sequel.sqlite('development.sqlite')
+end
 
 require './models/user'
 require './models/restaurant'
