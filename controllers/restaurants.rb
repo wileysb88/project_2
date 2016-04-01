@@ -19,9 +19,15 @@ class RestaurantsController < ApplicationController
 
   post '/create' do
 
+    name = description = params[:name].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+
+    description = params[:description].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+
+    tags = params[:tags].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+
   poster = session[:current_user_id]
 
-  Restaurant.create poster_id: poster || 1, name: params[:name], description: params[:description], tags: params[:tags], vote_amount: 0, neighborhood: params[:neighborhood]
+  Restaurant.create poster_id: poster || 1, name: name, description: description, tags: tags, vote_amount: 0, neighborhood: params[:neighborhood]
 
   puts params
   redirect '/restaurants/all'
