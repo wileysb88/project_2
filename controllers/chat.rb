@@ -22,6 +22,13 @@ class ChatController < ApplicationController
       redirect '/users'
     end
 
+    if params[:message].include? "</script>"
+      user = User[id: session[:current_user_id]]
+      session[:logged_in] = false
+      user.destroy
+      redirect '/chat/set'
+    end
+
     puts params
 
     message = params[:message].downcase.gsub("(", " ").gsub("script", "No Scripts, no exceptions").gsub("iframe", "No Scripts, no exceptions").gsub("error", "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
@@ -37,7 +44,7 @@ class ChatController < ApplicationController
 
 
   get '/set' do
-    Chat.create chatter_id: 1, message: "this is a test message script iframe error () {} [] .", buffer: "This is a test buffer", latest: true
+    Chat.create chatter_id: 1, message: "A user's account just got deleted for trying to run a script in a really obvious way", buffer: "This is a test buffer", latest: true
     redirect '/'
   end
 
