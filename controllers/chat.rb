@@ -22,7 +22,9 @@ class ChatController < ApplicationController
       redirect '/users'
     end
 
-    if params[:message].include? "<script>" or params[:message].include? "<iframe>" or params[:message].include? "onerror" or params[:message].include? "onerror" or params[:message].include? "()"
+    suspect_message = params[:message].downcase
+
+    if suspect_message.include? "<script>" or suspect_message.include? "<iframe>" or suspect_message.include? "onerror" or suspect_message.include? "()"
       user = User[id: session[:current_user_id]]
       @@deleted_user = user.username
       @looted_restaraunts = Restaurant.all
@@ -44,8 +46,8 @@ class ChatController < ApplicationController
 
     puts params
 
-    message = params[:message].downcase.gsub("(", " ").gsub("script", "No Scripts, no exceptions").gsub("iframe", "No Scripts, no exceptions").gsub("error", "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
-    message2 = message.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions")
+    message = params[:message].gsub("(", " ").gsub(/(script)/i, "No Scripts, no exceptions").gsub(/(iframe)/i, "No Scripts, no exceptions").gsub(/(onerror)/i, "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
+    message2 = message.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub(/(ajax)/i, "No Scripts, no exceptions").gsub(/(json)/i, "No Scripts, no exceptions")
 
     puts message2
 

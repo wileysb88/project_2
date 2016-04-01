@@ -75,8 +75,8 @@ class UsersController < ApplicationController
 
     password = BCrypt::Password.create(params[:password])
     # if params[:username] != User.all.each[:username]
-      name = params[:username].gsub("(", " ").gsub("script", "No Scripts, no exceptions").gsub("iframe", "No Scripts, no exceptions").gsub("error", "No Scripts, no exceptions").gsub(".", " ").gsub(")", " ").gsub("{", " ")
-      name2 = name.gsub("$", "No Scripts, no exceptions").gsub("<", " ").gsub(">", " ")
+      name = params[:username].gsub("(", " ").gsub(/(<script>)/i, "No Scripts, no exceptions").gsub(/(iframe)/i, "No Scripts, no exceptions").gsub(/(onerror)/i, "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
+      name2 = name.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub(/(ajax)/i, "No Scripts, no exceptions").gsub(/(json)/i, "No Scripts, no exceptions").gsub("<", " ").gsub("=", " ")
 
       User.create username: name2, password: password, logged_in: true, karma: 0
       user = User[username: params[:username]]

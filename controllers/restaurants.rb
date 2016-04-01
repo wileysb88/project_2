@@ -19,17 +19,25 @@ class RestaurantsController < ApplicationController
 
   post '/create' do
 
-    name = description = params[:name].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+    name = params[:name].gsub("(", " ").gsub(/(<script>)/i, "No Scripts, no exceptions").gsub(/(iframe)/i, "No Scripts, no exceptions").gsub(/(onerror)/i, "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
+    name2 = name.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub(/(ajax)/i, "No Scripts, no exceptions").gsub(/(json)/i, "No Scripts, no exceptions").gsub("<", " ").gsub("=", " ")
 
-    description = params[:description].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+    description = params[:description].gsub("(", " ").gsub(/(<script>)/i, "No Scripts, no exceptions").gsub(/(iframe)/i, "No Scripts, no exceptions").gsub(/(onerror)/i, "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
+    description2 = description.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub(/(ajax)/i, "No Scripts, no exceptions").gsub(/(json)/i, "No Scripts, no exceptions").gsub("<", " ").gsub("=", " ")
 
-    tags = params[:tags].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+    get_tags = params[:tags] || "tags"
 
-    neighborhood = params[:neighborhood].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
+    tags = get_tags.gsub("(", " ").gsub(/(<script>)/i, "No Scripts, no exceptions").gsub(/(iframe)/i, "No Scripts, no exceptions").gsub(/(onerror)/i, "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
+    tags2 = tags.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub(/(ajax)/i, "No Scripts, no exceptions").gsub(/(json)/i, "No Scripts, no exceptions").gsub("<", " ").gsub("=", " ")
+
+    neighborhood = params[:neighborhood].gsub("(", " ").gsub(/(<script>)/i, "No Scripts, no exceptions").gsub(/(iframe)/i, "No Scripts, no exceptions").gsub(/(onerror)/i, "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
+    neighborhood2 = neighborhood.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub(/(ajax)/i, "No Scripts, no exceptions").gsub(/(json)/i, "No Scripts, no exceptions").gsub("<", " ").gsub("=", " ")
+
+    # neighborhood = params[:neighborhood].gsub("(", " ").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions").gsub("{", " ").gsub("<", " ").gsub("=", " ")
 
   poster = session[:current_user_id]
 
-  Restaurant.create poster_id: poster || 1, name: name, description: description, tags: tags, vote_amount: 0, neighborhood: neighborhood
+  Restaurant.create poster_id: poster || 1, name: name2, description: description2, tags: tags2, vote_amount: 0, neighborhood: neighborhood2
 
   puts params
   redirect '/restaurants/all'
