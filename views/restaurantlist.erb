@@ -1,6 +1,6 @@
 
 
-<div class="col-md-6">
+<div class="col-md-12 ">
   <% @restaurants.each do |rest| %>
     <% if rest.vote_amount >= 10 %>
       <% @vote_class = 'high-vote' %>
@@ -18,13 +18,18 @@
         <p>Neighborhood: <%= rest.neighborhood %> </p>
         <p>Author: <%= User[id: rest.poster_id].username %> </p>
         <hr>
-          <form class="" action="/restaurants/voteup" method="post">
-            <input type="hidden" name="id" value="<%= rest.id %>">
-            <button class="btn-primary" type="submit" name="button" style="display: inline">Vote up</button>
+
+          <form class="form-inline" action="/restaurants/voteup" method="post">
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <button class="btn-primary" type="submit" name="button">Vote up</button>
+            </div>
           </form>
-          <form class="" action="/restaurants/votedown" method="post">
-            <input type="hidden" name="id" value="<%= rest.id %>">
-            <button class="btn-danger" type="submit" name="button" style="display: inline">Vote down</button>
+          <form class="form-inline" action="/restaurants/votedown" method="post">
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <button class="btn-danger" type="submit" name="button">Vote down</button>
+            </div>
           </form>
       </div>
   <% end %>

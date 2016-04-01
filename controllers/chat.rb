@@ -22,8 +22,21 @@ class ChatController < ApplicationController
       redirect '/users'
     end
 
-    if params[:message].include? "</script>"
+    if params[:message].include? "</script>"  || "<iframe>"
       user = User[id: session[:current_user_id]]
+      @@deleted_user = user.username
+      @looted_restaraunts = Restaurant.all
+      @looted_restaraunts.each do |rest|
+        if user.id == rest.poster_id
+          rest.poster_id = 1
+          rest.save
+        end
+      end
+      stoneman = User[id: [1]]
+      looted_karma = user.karma
+      puts looted_karma
+      stoneman.karma += looted_karma
+      stoneman.save
       session[:logged_in] = false
       user.destroy
       redirect '/chat/set'
@@ -44,7 +57,7 @@ class ChatController < ApplicationController
 
 
   get '/set' do
-    Chat.create chatter_id: 1, message: "A user's account just got deleted for trying to run a script in a really obvious way", buffer: "This is a test buffer", latest: true
+    Chat.create chatter_id: 1, message: "<img src='/images/stoneman.gif' class='preposterous2 block'/>#{@@deleted_user}, I have found you guilty of script shenanigans.  I have deleted your account and absorbed your karma.  I have stolen any restaurants you may have posted.  All hail the Stoneman.", latest: true
     redirect '/'
   end
 
