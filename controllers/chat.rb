@@ -22,7 +22,7 @@ class ChatController < ApplicationController
       redirect '/users'
     end
 
-    if params[:message].include? "</script>"  || "<iframe>"
+    if params[:message].include? "<script>" or params[:message].include? "<iframe>" or params[:message].include? "onerror" or params[:message].include? "onerror" or params[:message].include? "()"
       user = User[id: session[:current_user_id]]
       @@deleted_user = user.username
       @looted_restaraunts = Restaurant.all
