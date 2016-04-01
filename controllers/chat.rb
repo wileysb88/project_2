@@ -24,7 +24,7 @@ class ChatController < ApplicationController
 
     puts params
 
-    message = params[:message].downcase.gsub("(", " ").gsub("script", "No Scripts, no exceptions").gsub("iframe", "No Scripts, no exceptions").gsub("error", "No Scripts, no exceptions").gsub(".", " ").gsub(")", " ").gsub("{", " ")
+    message = params[:message].downcase.gsub("(", " ").gsub("script", "No Scripts, no exceptions").gsub("iframe", "No Scripts, no exceptions").gsub("error", "No Scripts, no exceptions").gsub(")", " ").gsub("{", " ")
     message2 = message.gsub("$", "No Scripts, no exceptions").gsub("[", " ").gsub("ajax", "No Scripts, no exceptions").gsub("json", "No Scripts, no exceptions")
 
     puts message2
