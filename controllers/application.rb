@@ -63,6 +63,15 @@ class ApplicationController < Sinatra::Base
     erb :homepage
   end
 
+  # get '/masterlist' do
+  #   if !session[:logged_in]
+  #     redirect '/users'
+  #   end
+  #   @restaurants_master = Restaurant.all
+  #   @users_master = User.all
+  #   erb :master
+  # end
+
   not_found do
     erb :notfound
   end

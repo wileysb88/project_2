@@ -1,0 +1,37 @@
+<!-- Homepage.erb -->
+<div class="container-fluid">
+  <div class="row welcome_blurb">
+  </div>
+</div>
+
+<div class="col-md-12 top_ten">
+  <div class="col-md-6" style="float: left">
+    <% @users_master.each do |user| %>
+
+          <div class="rest-list">
+            <p> <%= user.username %> </p>
+            <p>ID: <%= user.id %> </p>
+            <hr>
+            <form action="/users/delete" method="post">
+              <input type="hidden" name="id" value="<%= user.id %>">
+              <input class="btn btn-danger form-control" type="submit" value="X">
+            </form>
+          </div>
+        <% end %>
+    </div>
+  <div class="col-md-6" style="float: right">
+    Your Restaurants
+    <% @restaurants_master.each do |rest| %>
+
+          <div class="rest-list">
+            <p> <%= rest.name %> </p>
+            <p>Score: <%= rest.vote_amount %> </p>
+            <hr>
+            <form action="/restaurants/delete" method="post">
+              <input type="hidden" name="id" value="<%= rest.id %>">
+              <input class="btn btn-danger form-control" type="submit" value="X">
+            </form>
+          </div>
+        <% end %>
+  </div>
+  <br />
