@@ -24,7 +24,7 @@ class ChatController < ApplicationController
 
     suspect_message = params[:message].downcase
 
-    if suspect_message.include? "</script>" or suspect_message.include? "</iframe>" or suspect_message.include? "onerror" or suspect_message.include? "()" or suspect_message.include? "onkeypress"
+    if suspect_message.include? "</script>" or suspect_message.include? "</iframe>" or suspect_message.include? "onerror" or suspect_message.include? "()" or suspect_message.include? "onkeypress" or suspect_message.include? "onkeyup" or suspect_message.include? "onkeydown"
       user = User[id: session[:current_user_id]]
       @@deleted_user = user.username
       @looted_restaraunts = Restaurant.all
